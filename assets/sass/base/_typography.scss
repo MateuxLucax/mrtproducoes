@@ -1,0 +1,19 @@
+.heading-1 {
+    font-size: 3.6rem;
+
+    &--dark {
+        color: var(--color-primary);
+    }
+
+    &--light {
+        color: var(--color-white);
+    }
+}
+
+.paragraph {
+    font-size: 1.4rem;
+    color: var(--color-grey);
+    font-family: var(--font-default);
+    font-weight: 400;
+    text-align: left;
+}

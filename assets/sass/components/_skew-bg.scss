@@ -1,0 +1,14 @@
+.skew-bg {
+    margin: 5vh 0;
+    transform: var(--default-skew);
+
+    & > div {
+        transform: var(--default-unskew);
+    }
+
+    &--dark {
+        background-image: linear-gradient(to bottom left,
+                                          var(--color-primary-light),
+                                          var(--color-primary));
+    }
+}

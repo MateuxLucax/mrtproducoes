@@ -1,0 +1,54 @@
+.hero {
+    // Base style for hero
+    transform: var(--default-skew);
+    transform-origin: left top;
+    position: relative;
+    overflow: hidden;
+    min-height: 40vh;
+
+    &::before { // Sets background definitions. Background is defined on the modifiers
+        content: '';
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background-size: cover;
+        background-position: center;
+        transform: var(--default-unskew);
+        transform-origin: left top;
+    }
+
+    &__container {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        transform-origin: left top;
+        transform: var(--default-unskew);
+        color: var(--color-white);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__img {
+        width: 20vw;
+    }
+
+    &__title {
+        margin-top: 2rem;
+        color: var(--color-white);
+        font-size: 10vw;
+        margin-bottom: 5vh;
+    }
+
+    // Modifiers
+    &--home {
+        min-height: 70vh;
+        &::before {
+            background-image: linear-gradient(to left bottom,
+                                            rgba(var(--color-primary-light-rgb), .7),
+                                            rgba(var(--color-primary-rgb), .7)),
+                            url('../img/pagina-inicial/fundo-mobile.jpg');
+        }
+    }
+}

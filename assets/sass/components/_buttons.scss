@@ -1,0 +1,82 @@
+.btn-primary {
+    &,
+    &:link,
+    &:visited {
+        font-size: 1.6rem;
+        display: inline-block;
+        padding: 1rem 2rem;
+        color: var(--color-primary);
+        text-decoration: none;
+        border: .2rem solid var(--color-primary);
+        background-image: linear-gradient(120deg, 
+                                          transparent 0%, 
+                                          transparent 50%, 
+                                          var(--color-primary) 50%);
+        background-size: 220%;
+        transition: all .4s;
+        text-align: center;
+        width: 100%;
+    }
+    
+    &:hover,
+    &:active {
+        background-position: 100%;
+        color: var(--color-white);
+    }
+
+    &--light {
+
+        &,
+        &:link,
+        &:visited {
+            color: var(--color-white);
+            border: .2rem solid var(--color-white);
+            background-image: linear-gradient(120deg, 
+                                              transparent 0%, 
+                                              transparent 50%, 
+                                              var(--color-white) 50%)
+        }
+        
+        &:hover,
+        &:active {
+            background-position: 100%;
+            color: var(--color-primary);
+        }
+    }
+}
+
+.link {
+    &,
+    &:link,
+    &:visited {
+        font-size: 1.6rem;
+        display: inline-block;
+        color: var(--color-primary);
+        text-decoration: none;
+        font-weight: 700;
+        transition: .2s all ease-in;
+        position: relative;
+    }
+
+    &::before {
+        position: absolute;
+        bottom: -.2rem;
+        content: '';
+        width: 100%;
+        transition: .2s all ease-in;
+        height: .1rem;
+        background-color: var(--color-primary-dark);
+        visibility: hidden;
+        transform-origin: left;
+        transform: scaleX(0);
+    }
+
+    &:hover {
+        color: var(--color-primary-dark);
+        
+        &::before {
+            visibility: visible;
+            transform: scaleX(1);
+        }
+    }    
+}

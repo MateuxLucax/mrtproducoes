@@ -1,0 +1,56 @@
+.home {
+    grid-template-rows: 70vh min-content;
+
+    &__albums {
+        grid-column: center-start / center-end;
+        display: grid;
+        grid-template-rows: repeat(4, min-content);
+    }
+
+    &__clips {
+        grid-column: full-start / full-end;
+        display: grid;
+        padding: 4rem 0;
+        grid-template-columns: var(--default-grid-col);
+        
+        &-container {
+            grid-column: center-start / center-end;
+            grid-template-rows: repeat(4, min-content);
+        }
+    }
+
+    &__testimony {
+        grid-column: full-start / full-end;
+        display: grid;
+        padding: 4rem 0;
+        grid-template-columns: var(--default-grid-col);
+        
+        &-container {
+            grid-column: full-start / full-end;
+            grid-template-rows: repeat(4, min-content);
+        }
+    }
+
+
+    &__change-perspective {
+        grid-column: full-start / full-end;
+        display: grid;
+        grid-template-columns: var(--default-grid-col);
+
+        & > .video {
+            grid-column: full-start / full-end;
+        }
+
+        &-container {
+            grid-column: center-start / center-end;
+        }
+    }
+
+    &__btn {
+        justify-self: center;
+    }
+
+    .footer {
+        grid-column: full-start / full-end;
+    }
+}

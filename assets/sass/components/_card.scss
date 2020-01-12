@@ -1,0 +1,8 @@
+.card {
+    padding: 2rem;
+    box-shadow: var(--box-shadow-medium);
+
+    &--white {
+        background-color: var(--color-white);
+    }
+}
