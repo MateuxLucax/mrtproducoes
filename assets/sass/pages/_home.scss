@@ -1,5 +1,11 @@
 .home {
+    position: relative;
     grid-template-rows: 70vh min-content;
+
+    &__navigation {
+        grid-column: none;
+        grid-row: none;
+    }
 
     &__albums {
         grid-column: center-start / center-end;
@@ -19,15 +25,14 @@
         }
     }
 
-    &__testimony {
+    &__social-proof {
         grid-column: full-start / full-end;
         display: grid;
         padding: 4rem 0;
         grid-template-columns: var(--default-grid-col);
         
         &-container {
-            grid-column: full-start / full-end;
-            grid-template-rows: repeat(4, min-content);
+            grid-column: center-start / center-end;
         }
     }
 

@@ -21,11 +21,23 @@
     // BOX SHADOW
     --box-shadow-medium: 0 1.5rem 4rem rgba(var(--color-black-rgb), .4);
     --box-shadow-big: 0 2rem 4rem rgba(var(--color-black-rgb), .4);
+    --box-shadow-small: 0 1rem 2rem rgba(var(--color-black-rgb), .3);
 
     // SKEW
-    --default-skew: skewY(-10deg);
-    --default-unskew: skewY(10deg);
+    --default-skew: skewY(-7deg);
+    --default-unskew: skewY(7deg);
 
     // GRID
     --default-grid-col: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+
+    @include responsive(phone) {
+        --default-skew: skewY(-5deg);
+        --default-unskew: skewY(5deg);
+        --default-grid-col: [full-start] minmax(12rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(12rem, 1fr) [full-end];
+    }
+
+    @include responsive(desktop) {
+        --default-skew: skewY(-3deg);
+        --default-unskew: skewY(3deg);
+    }
 }

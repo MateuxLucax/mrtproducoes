@@ -1,7 +1,7 @@
 // ABSTRACT
-@import 'abstract/variables';
-@import 'abstract/functions';
 @import 'abstract/mixins';
+@import 'abstract/functions';
+@import 'abstract/variables';
 
 // BASE
 @import 'base/base';
@@ -15,13 +15,14 @@
 @import 'components/buttons';
 @import 'components/skew-bg';
 @import 'components/card';
+@import 'components/testimony';
 @import 'components/video';
-@import 'components/slider';
 
 // LAYOUT
 @import 'layout/grid';
 @import 'layout/header';
 @import 'layout/footer';
+@import 'layout/navigation';
 
 // PAGES
 @import 'pages/home';
