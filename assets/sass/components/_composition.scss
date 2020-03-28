@@ -1,36 +1,51 @@
 .composition {
-    position: relative;
-    height: 87.5vw;
-    margin: 3rem 0;
+	position: relative;
+	height: 95vw;
 
-    &__photo {
-        width: 55%;
-        box-shadow: var(--box-shadow-medium);
-        border-radius: .2rem;
-        position: absolute;
-        z-index: 10;
-        transition: all .2s;
+	@include responsive(tab-port) {
+		height: 57.5vw;
+	}
+	margin: 3rem 0;
 
-        &--p1 {
-            left: 0;
-            top: 0;
-        }
+	&__photo {
+		width: 55%;
 
-        &--p2 {
-            right: 0;
-            top: 6rem;
-        }
+		@include responsive(tab-port) {
+			width: 40%;
+		}
+		box-shadow: var(--box-shadow-medium);
+		border-radius: 0.2rem;
+		position: absolute;
+		z-index: 10;
+		transition: all 0.2s;
 
-        &--p3 {
-            left: 20%;
-            top: 12rem;
-        }
+		&--p1 {
+			left: 0;
+			top: 0;
 
-        &:hover {
-            transform: scale(1.05) translateY(-.5rem);
-            box-shadow: var(--box-shadow-big);
-            z-index: 20;
-        }
-    }
+			@include responsive(tab-port) {
+				left: 9rem;
+			}
+		}
 
+		&--p2 {
+			right: 0;
+			top: 6rem;
+
+			@include responsive(tab-port) {
+				right: 9rem;
+			}
+		}
+
+		&--p3 {
+			left: 20%;
+			top: 12rem;
+		}
+
+		&:hover {
+			transform: scale(1.05) translateY(-0.5rem);
+			box-shadow: var(--box-shadow-big);
+			z-index: 20;
+		}
+	}
 }

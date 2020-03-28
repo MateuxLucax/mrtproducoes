@@ -1,54 +1,82 @@
 .hero {
-    // Base style for hero
-    transform: var(--default-skew);
-    transform-origin: left top;
-    position: relative;
-    overflow: hidden;
-    min-height: 40vh;
+	// Base style for hero
 
-    &::before { // Sets background definitions. Background is defined on the modifiers
-        content: '';
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        background-size: cover;
-        background-position: center;
-        transform: var(--default-unskew);
-        transform-origin: left top;
-    }
+	user-select: none;
+	transform: var(--default-skew);
+	transform-origin: left top;
+	position: relative;
+	overflow: hidden;
+	min-height: 40vh;
 
-    &__container {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        transform-origin: left top;
-        transform: var(--default-unskew);
-        color: var(--color-white);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
+	&::before {
+		// Sets background definitions. Background is defined on the modifiers
+		content: "";
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		background-size: cover;
+		background-position: center;
+		transform: var(--default-unskew);
+		transform-origin: left top;
+	}
 
-    &__img {
-        width: 10rem;
-    }
+	&__container {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		transform-origin: left top;
+		transform: var(--default-unskew);
+		color: var(--color-white);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
 
-    &__title {
-        margin-top: 2rem;
-        color: var(--color-white);
-        font-size: 4rem;
-        margin-bottom: 5vh;
-    }
+	&__img {
+		width: 8rem;
+	}
 
-    // Modifiers
-    &--home {
-        min-height: 70vh;
-        &::before {
-            background-image: linear-gradient(to left bottom,
-                                            rgba(var(--color-primary-light-rgb), .7),
-                                            rgba(var(--color-primary-rgb), .7)),
-                            url('../img/pagina-inicial/fundo-mobile.jpg');
-        }
-    }
+	&__title {
+		margin-top: 2rem;
+		color: var(--color-white);
+		font-size: 4.8rem;
+		margin-bottom: 5vh;
+	}
+
+	// Modifiers
+	&--home {
+		min-height: 70vh;
+		&::before {
+			background-image: linear-gradient(
+					to left bottom,
+					rgba(var(--color-primary-light-rgb), 0.7),
+					rgba(var(--color-primary-rgb), 0.7)
+				),
+				url("../img/pagina-inicial/fundo-mobile.jpg");
+			@include responsive(tab-port) {
+				background-image: linear-gradient(
+						to left bottom,
+						rgba(var(--color-primary-light-rgb), 0.7),
+						rgba(var(--color-primary-rgb), 0.7)
+					),
+					url("../img/pagina-inicial/fundo.jpg");
+			}
+		}
+
+		.hero__title {
+			font-size: 3.2rem;
+		}
+	}
+
+	&--clipes {
+		&::before {
+			background-image: linear-gradient(
+					to left bottom,
+					rgba(var(--color-primary-light-rgb), 0.7),
+					rgba(var(--color-primary-rgb), 0.7)
+				),
+				url("../img/clipes/fundo-mobile.jpg");
+		}
+	}
 }

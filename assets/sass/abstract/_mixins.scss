@@ -1,23 +1,39 @@
 // Media queries manager
 
 @mixin responsive($breakpoint) {
-    @if $breakpoint == phone {
-        @media only screen and (min-width: 37.5em) { @content }; // 600px
-    }
+	@if $breakpoint == small-phone {
+		@media only screen and (max-width: 25em) {
+			@content;
+		} // 400px
+	}
 
-    @if $breakpoint == tab-port {
-        @media only screen and (min-width: 56.25em) { @content };  // 900px
-    }
+	@if $breakpoint == phone {
+		@media only screen and (min-width: 37.5em) {
+			@content;
+		} // 600px
+	}
 
-    @if $breakpoint == tab-land {
-        @media only screen and (min-width: 75em) { @content }; // 1200px
-    }
+	@if $breakpoint == tab-port {
+		@media only screen and (min-width: 46.875em), (orientation: landscape) {
+			@content;
+		} // 750px or smartphones in landscape mode
+	}
 
-    @if $breakpoint == desktop {
-        @media only screen and (min-width: 87.5em) { @content }; // 1400px
-    }
+	@if $breakpoint == tab-land {
+		@media only screen and (min-width: 60em) {
+			@content;
+		} // 1000px
+	}
 
-    @if $breakpoint == big-desktop {
-        @media only screen and (min-width: 112.5em) { @content }; // 1800px
-    }
+	@if $breakpoint == desktop {
+		@media only screen and (min-width: 87.5em) {
+			@content;
+		} // 1400px
+	}
+
+	@if $breakpoint == big-desktop {
+		@media only screen and (min-width: 112.5em) {
+			@content;
+		} // 1800px
+	}
 }

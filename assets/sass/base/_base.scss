@@ -3,31 +3,36 @@
 *,
 *::after,
 *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-    scroll-behavior: smooth;
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+	scroll-behavior: smooth;
 }
 
 html {
-    // font-size: 62.5%; // 1rem = 10px; 10px/16px = 62.5%
-    font-size: 56.25%; // 1rem = 10px; 10px/16px = 62.5%
-    
-    @include responsive(tab-port) {
-        font-size: 56.25%;
-    }
+	// pixel / 16px = 1rem
+
+	font-size: 56.25%;
+
+	@include responsive(tab-land) {
+		font-size: 60%;
+	}
+
+	@include responsive(desktop) {
+		font-size: 56.25%;
+	}
 }
 
 body {
-    box-sizing: border-box;
-    font-family: var(--font-default);
-    font-weight: 300;
-    font-size: 1.6rem;
-    font-style: normal;
-    background-color: var(--color-white);
+	box-sizing: border-box;
+	font-family: var(--font-default);
+	font-weight: 300;
+	font-size: 1.6rem;
+	font-style: normal;
+	background-color: var(--color-white);
 }
 
 *::selection {
-    background: var(--color-primary);
-    color: var(--color-white);
+	background: var(--color-primary);
+	color: var(--color-white);
 }

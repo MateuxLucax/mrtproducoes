@@ -1,14 +1,21 @@
 .skew-bg {
-    margin: 5vh 0;
-    transform: var(--default-skew);
+	margin: 5vh 0;
 
-    & > div {
-        transform: var(--default-unskew);
-    }
+	@include responsive(tab-land) {
+		margin: 3vh 0;
+	}
 
-    &--dark {
-        background-image: linear-gradient(to bottom left,
-                                          var(--color-primary-light),
-                                          var(--color-primary));
-    }
+	transform: var(--default-skew);
+
+	& > div {
+		transform: var(--default-unskew);
+	}
+
+	&--dark {
+		background-image: linear-gradient(
+			to bottom left,
+			var(--color-primary-light),
+			var(--color-primary)
+		);
+	}
 }

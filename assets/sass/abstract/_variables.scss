@@ -1,43 +1,46 @@
 :root {
-    // COLORS
-    
-    --color-primary: #5A3473; // Use var(--color-primary) to apply this color
-    --color-primary-rgb: 90, 52, 115;
-    --color-primary-light: #8758A6; 
-    --color-primary-light-rgb: 135, 88, 166; 
-    --color-primary-dark: #4B2B61; 
-    --color-primary-dark-rgb: 75, 43, 97; 
-    --color-secondary: #04D9D9;
-    --color-grey: #403C3D;
-    --color-black-rgb: 0, 0, 0;
-    --color-white: #F2F2F2;
-    --color-white-rgb: 242 242 242;
-    
-    // FONT
-    --font-default: 'Nunito Sans', sans-serif;
-    --font-display: 'grandma', cursive;
-    --font-size-default : 1.6rem;
+	// COLORS
+	--color-primary: #5a3473; // Use var(--color-primary) to apply this color
+	--color-primary-rgb: 90, 52, 115;
+	--color-primary-light: #8758a6;
+	--color-primary-light-rgb: 135, 88, 166;
+	--color-primary-dark: #4b2b61;
+	--color-primary-dark-rgb: 75, 43, 97;
+	--color-secondary: #04d9d9;
+	--color-grey: #403c3d;
+	--color-black-rgb: 0, 0, 0;
+	--color-white: #f2f2f2;
+	--color-white-rgb: 242 242 242;
 
-    // BOX SHADOW
-    --box-shadow-medium: 0 1.5rem 4rem rgba(var(--color-black-rgb), .4);
-    --box-shadow-big: 0 2rem 4rem rgba(var(--color-black-rgb), .4);
-    --box-shadow-small: 0 1rem 2rem rgba(var(--color-black-rgb), .3);
+	// FONT
+	--font-default: "Nunito Sans", sans-serif;
+	--font-display: "grandma", cursive;
+	--font-size-default: 1.6rem;
 
-    // SKEW
-    --default-skew: skewY(-7deg);
-    --default-unskew: skewY(7deg);
+	// BOX SHADOW
+	--box-shadow-medium: 0 1.5rem 4rem rgba(var(--color-black-rgb), 0.4);
+	--box-shadow-big: 0 2rem 4rem rgba(var(--color-black-rgb), 0.4);
+	--box-shadow-small: 0 1rem 2rem rgba(var(--color-black-rgb), 0.3);
 
-    // GRID
-    --default-grid-col: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+	// SKEW
+	--default-skew: skewY(-7deg);
+	--default-unskew: skewY(7deg);
 
-    @include responsive(phone) {
-        --default-skew: skewY(-5deg);
-        --default-unskew: skewY(5deg);
-        --default-grid-col: [full-start] minmax(12rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(12rem, 1fr) [full-end];
-    }
+	// GRID
+	--default-grid-col: [full-start] minmax(4rem, 1fr) [center-start]
+		repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end]
+		minmax(4rem, 1fr) [full-end];
 
-    @include responsive(desktop) {
-        --default-skew: skewY(-3deg);
-        --default-unskew: skewY(3deg);
-    }
+	@include responsive(tab-port) {
+		--default-skew: skewY(-5deg);
+		--default-unskew: skewY(5deg);
+		--default-grid-col: [full-start] minmax(12rem, 1fr) [center-start]
+			repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end]
+			minmax(12rem, 1fr) [full-end];
+	}
+
+	@include responsive(desktop) {
+		--default-skew: skewY(-3deg);
+		--default-unskew: skewY(3deg);
+	}
 }
