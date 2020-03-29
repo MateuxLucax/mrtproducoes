@@ -1,5 +1,7 @@
 .navigation {
 	user-select: none !important;
+	grid-column: none;
+	grid-row: none;
 
 	&__checkbox {
 		display: none;

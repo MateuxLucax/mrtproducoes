@@ -1,18 +1,41 @@
+button {
+	border: none;
+	margin: 0;
+	padding: 0;
+	width: auto;
+	overflow: visible;
+	background: transparent;
+	color: inherit;
+	font: inherit;
+	text-align: inherit;
+	outline: none;
+	border-radius: 0;
+	line-height: normal;
+	-webkit-font-smoothing: inherit;
+	-moz-osx-font-smoothing: inherit;
+	-webkit-appearance: none;
+	&::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}
+}
+
 .btn-primary {
 	&,
 	&:link,
 	&:visited {
+		height: min-content;
 		font-size: 1.6rem;
 		display: inline-block;
 		padding: 1rem 2rem;
-		color: currentColor;
+		color: var(--color-white);
 		text-decoration: none;
 		border: 0.2rem solid var(--color-primary);
 		background-image: linear-gradient(
 			120deg,
-			transparent 0%,
-			transparent 50%,
-			var(--color-primary) 50%
+			var(--color-primary) 0%,
+			var(--color-primary) 50%,
+			transparent 50%
 		);
 		background-size: 220%;
 		transition: all 0.4s;
@@ -23,27 +46,27 @@
 	&:hover,
 	&:active {
 		background-position: 100%;
-		color: var(--color-white);
+		color: var(--color-primary);
 	}
 
 	&--light {
 		&,
 		&:link,
 		&:visited {
-			color: var(--color-white);
+			color: var(--color-primary);
 			border: 0.2rem solid var(--color-white);
 			background-image: linear-gradient(
 				120deg,
-				transparent 0%,
-				transparent 50%,
-				var(--color-white) 50%
+				var(--color-white) 0%,
+				var(--color-white) 50%,
+				transparent 50%
 			);
 		}
 
 		&:hover,
 		&:active {
 			background-position: 100%;
-			color: var(--color-primary);
+			color: var(--color-white);
 		}
 	}
 }
@@ -84,5 +107,29 @@
 			visibility: visible;
 			transform: scaleX(1.01);
 		}
+	}
+}
+
+.btn-secondary {
+	// This button must contain a <div> inside for propper unskew
+	color: var(--color-primary);
+	font-size: 1.6rem;
+	text-align: center;
+	width: max-content;
+	justify-self: center;
+	padding: 1rem 3rem;
+	background: transparent;
+	border: 0.2rem solid var(--color-primary);
+	transition: opacity 0.2s ease-in-out;
+	transform: skewX(-20deg);
+	margin: 2rem 0;
+
+	& > div {
+		transform: skewX(20deg);
+	}
+
+	&:hover,
+	:active {
+		opacity: 0.7;
 	}
 }

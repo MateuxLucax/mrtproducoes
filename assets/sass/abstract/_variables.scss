@@ -1,16 +1,27 @@
+@function hexToRGB($hex) {
+	@return red($hex), green($hex), blue($hex);
+}
+
+$color-primary: #5a3473;
+$color-primary-light: #8758a6;
+$color-primary-dark: #4b2b61;
+$color-secondary: #04d9d9;
+$color-grey: #403c3d;
+$color-white: #f2f2f2;
+
 :root {
 	// COLORS
-	--color-primary: #5a3473; // Use var(--color-primary) to apply this color
-	--color-primary-rgb: 90, 52, 115;
-	--color-primary-light: #8758a6;
-	--color-primary-light-rgb: 135, 88, 166;
-	--color-primary-dark: #4b2b61;
-	--color-primary-dark-rgb: 75, 43, 97;
-	--color-secondary: #04d9d9;
-	--color-grey: #403c3d;
-	--color-black-rgb: 0, 0, 0;
-	--color-white: #f2f2f2;
-	--color-white-rgb: 242 242 242;
+	--color-primary: #{$color-primary}; // Use var(--color-primary) to apply this color
+	--color-primary-rgb: #{hexToRGB($color-primary)};
+	--color-primary-light: #{$color-primary-light};
+	--color-primary-light-rgb: #{hexToRGB($color-primary-light)};
+	--color-primary-dark: #{$color-primary-dark};
+	--color-primary-dark-rgb: #{hexToRGB($color-primary-dark)};
+	--color-secondary: #{$color-secondary};
+	--color-grey: #{$color-grey};
+	--color-black-rgb: #{hexToRGB($color-grey)};
+	--color-white: #{$color-white};
+	--color-white-rgb: #{hexToRGB($color-white)};
 
 	// FONT
 	--font-default: "Nunito Sans", sans-serif;

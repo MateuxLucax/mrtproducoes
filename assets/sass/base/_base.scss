@@ -19,7 +19,11 @@ html {
 	}
 
 	@include responsive(desktop) {
-		font-size: 56.25%;
+		font-size: 68.75%;
+	}
+
+	@include responsive(big-desktop) {
+		font-size: 75%;
 	}
 }
 

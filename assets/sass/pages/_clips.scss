@@ -1,0 +1,29 @@
+.clips {
+	grid-template-rows: 40vh min-content;
+
+	&__container {
+		display: grid;
+		grid-column: center-start / center-end;
+		grid-template-columns: 1fr;
+		@include responsive(tab-land) {
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: 2rem;
+		}
+	}
+
+	&__video-container {
+		h2 {
+			font-size: 2.4rem;
+			color: var(--color-primary);
+			font-weight: 300;
+			font-family: var(--font-display);
+			&:first-child {
+				margin-top: 1rem;
+			}
+		}
+	}
+
+	&__btn {
+		grid-column: center-start / center-end;
+	}
+}

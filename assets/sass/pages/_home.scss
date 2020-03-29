@@ -2,15 +2,39 @@
 	position: relative;
 	grid-template-rows: 70vh min-content;
 
-	&__navigation {
-		grid-column: none;
-		grid-row: none;
+	@include responsive(tab-port) {
+		grid-template-rows: 60vh min-content;
 	}
 
 	&__albums {
 		grid-column: center-start / center-end;
 		display: grid;
 		grid-template-rows: repeat(4, min-content);
+
+		@include responsive(tab-land) {
+			grid-template-rows: repeat(2, min-content);
+			grid-template-columns: 2fr 3fr;
+			& h1 {
+				grid-column: 1 / span 2;
+			}
+
+			& p,
+			a {
+				position: relative;
+				grid-row: 2;
+				grid-column: 1;
+				align-self: center;
+			}
+
+			& p {
+				margin-bottom: 7rem;
+				text-align: center;
+			}
+
+			& a {
+				margin-top: 7rem;
+			}
+		}
 	}
 
 	&__clips {
@@ -20,8 +44,42 @@
 		grid-template-columns: var(--default-grid-col);
 
 		&-container {
+			display: grid;
 			grid-column: center-start / center-end;
 			grid-template-rows: repeat(4, min-content);
+
+			@include responsive(tab-land) {
+				grid-template-rows: repeat(2, min-content);
+				grid-template-columns: 2fr 3fr;
+				& h1 {
+					grid-column: 1 / span 2;
+				}
+
+				& video {
+					padding-left: 6rem;
+					position: relative;
+					grid-row: 2;
+					grid-column: 2;
+					align-self: center;
+				}
+
+				& p,
+				a {
+					position: relative;
+					grid-row: 2;
+					grid-column: 1;
+					align-self: center;
+				}
+
+				& p {
+					margin-bottom: 7rem;
+					text-align: center;
+				}
+
+				& a {
+					margin-top: 7rem;
+				}
+			}
 		}
 	}
 
@@ -69,9 +127,5 @@
 
 	&__btn {
 		justify-self: center;
-	}
-
-	.footer {
-		grid-column: full-start / full-end;
 	}
 }

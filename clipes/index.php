@@ -5,7 +5,7 @@
 
     // Startup variables
     $title = 'Clipes';
-    $description = 'Descubra nossos maravilhosos clipes que fazemos com muito amor.';
+    $description = 'Além dos ensaios fotográficos, gravamos clipes que vão para onde sua imaginação mandar!';
     $root_path = '../'; // Path relative to the root of the project
                                                                             // Params needed
     $nav = file_get_contents($root_path. "html/components/nav.html"); // {hero_mod} / {title}
@@ -17,7 +17,7 @@
 
     // Custom params
     $hero_mod = "hero--clipes";
-    $page_layout = "home";
+    $page_layout = "clips";
     $active = "active";
     $hero_logo = '';
     $theme = "footer--purple";

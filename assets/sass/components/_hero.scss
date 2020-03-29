@@ -47,6 +47,11 @@
 	// Modifiers
 	&--home {
 		min-height: 70vh;
+
+		@include responsive(tab-port) {
+			min-height: 60vh;
+		}
+
 		&::before {
 			background-image: linear-gradient(
 					to left bottom,
@@ -77,6 +82,55 @@
 					rgba(var(--color-primary-rgb), 0.7)
 				),
 				url("../img/clipes/fundo-mobile.jpg");
+
+			@include responsive(tab-port) {
+				background-image: linear-gradient(
+						to left bottom,
+						rgba(var(--color-primary-light-rgb), 0.7),
+						rgba(var(--color-primary-rgb), 0.7)
+					),
+					url("../img/clipes/fundo.jpg");
+			}
+		}
+	}
+
+	&--sobre {
+		&::before {
+			background-image: linear-gradient(
+					to left bottom,
+					rgba(var(--color-primary-light-rgb), 0.7),
+					rgba(var(--color-primary-rgb), 0.7)
+				),
+				url("../img/sobre/fundo-mobile.jpg");
+
+			@include responsive(tab-port) {
+				background-image: linear-gradient(
+						to left bottom,
+						rgba(var(--color-primary-light-rgb), 0.7),
+						rgba(var(--color-primary-rgb), 0.7)
+					),
+					url("../img/sobre/fundo.jpg");
+			}
+		}
+	}
+
+	&--products {
+		&::before {
+			background-image: linear-gradient(
+					to left bottom,
+					rgba(var(--color-primary-light-rgb), 0.7),
+					rgba(var(--color-primary-rgb), 0.7)
+				),
+				url("../img/fotos-de-produtos/fundo-mobile.jpg");
+
+			@include responsive(tab-port) {
+				background-image: linear-gradient(
+						to left bottom,
+						rgba(var(--color-primary-light-rgb), 0.7),
+						rgba(var(--color-primary-rgb), 0.7)
+					),
+					url("../img/fotos-de-produtos/fundo.jpg");
+			}
 		}
 	}
 }

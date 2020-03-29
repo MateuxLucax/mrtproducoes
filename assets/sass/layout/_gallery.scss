@@ -1,0 +1,61 @@
+// Adaptive Photo Layout by Tim Van Damme
+// https://codepen.io/maxvoltar/pen/eYOPdMG
+
+// BASIC
+
+ul .gallery {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+li.photo-container {
+	height: 40vh;
+	flex-grow: 1;
+
+	// There's no science in using "10" here. In all my testing, this delivered the best results.
+	&:last-child {
+		flex-grow: 10;
+	}
+	& img {
+		max-height: 100%;
+		min-width: 100%;
+		object-fit: cover;
+		vertical-align: bottom;
+	}
+}
+
+// ADVANCED
+
+// Portrait
+
+@media (max-aspect-ratio: 1/1) {
+	li.photo-container {
+		height: 30vh;
+	}
+}
+
+// Short screens
+
+@media (max-height: 37.5em) {
+	li.photo-container {
+		height: 80vh;
+	}
+}
+
+// Smaller screens in portrait
+
+@media (max-aspect-ratio: 1/1) and (max-width: 37.5em) {
+	ul {
+		flex-direction: row;
+	}
+
+	li.photo-container {
+		height: auto;
+		width: 100%;
+		& img {
+			width: 100%;
+			max-height: 75vh;
+			min-width: 0;
+		}
+	}
+}

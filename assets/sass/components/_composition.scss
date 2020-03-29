@@ -1,18 +1,44 @@
 .composition {
 	position: relative;
-	height: 95vw;
+	height: 90vw;
+	margin: 3rem 0;
+
+	@include responsive(small-phone) {
+		height: 95vw;
+	}
 
 	@include responsive(tab-port) {
-		height: 57.5vw;
+		height: 52.5vw;
 	}
-	margin: 3rem 0;
+
+	@include responsive(tab-land) {
+		height: 40vw;
+		margin: 0;
+	}
+
+	@include responsive(desktop) {
+		height: 35vw;
+	}
+
+	@include responsive(big-desktop) {
+		height: 30vw;
+	}
 
 	&__photo {
 		width: 55%;
 
 		@include responsive(tab-port) {
+			width: 35%;
+		}
+
+		@include responsive(tab-land) {
 			width: 40%;
 		}
+
+		@include responsive(desktop) {
+			width: 35%;
+		}
+
 		box-shadow: var(--box-shadow-medium);
 		border-radius: 0.2rem;
 		position: absolute;
@@ -24,7 +50,14 @@
 			top: 0;
 
 			@include responsive(tab-port) {
-				left: 9rem;
+				left: 11rem;
+			}
+			@include responsive(tab-land) {
+				left: 7rem;
+			}
+
+			@include responsive(desktop) {
+				left: 12rem;
 			}
 		}
 
@@ -33,13 +66,26 @@
 			top: 6rem;
 
 			@include responsive(tab-port) {
-				right: 9rem;
+				right: 11rem;
+			}
+			@include responsive(tab-land) {
+				right: 7rem;
+			}
+
+			@include responsive(desktop) {
+				right: 12rem;
+				top: 10%;
 			}
 		}
 
 		&--p3 {
 			left: 20%;
 			top: 12rem;
+
+			@include responsive(tab-port) {
+				left: 30%;
+				top: 20%;
+			}
 		}
 
 		&:hover {

@@ -1,0 +1,7 @@
+.products {
+	grid-template-rows: 40vh min-content;
+
+	& .gallery {
+		grid-column: full-start / full-end;
+	}
+}

@@ -3,10 +3,15 @@
 	display: grid;
 	grid-template-columns: var(--default-grid-col);
 	grid-row: initial;
+	grid-column: full-start / full-end;
 	padding-top: 2rem;
 
-	@include responsive(tab-land) {
+	@include responsive(tab-port) {
 		padding-top: 0;
+	}
+
+	@include responsive(tab-land) {
+		padding-top: 2rem;
 	}
 
 	&__box {

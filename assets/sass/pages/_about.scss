@@ -1,0 +1,93 @@
+.about {
+	grid-template-rows: 40vh min-content;
+
+	&__intro {
+		grid-column: center-start / center-end;
+		margin-bottom: 3rem;
+		& h2 {
+			color: var(--color-primary);
+			font-size: 3.2rem;
+		}
+	}
+
+	&__who-we-are {
+		grid-column: center-start / center-end;
+		& h2 {
+			color: var(--color-primary);
+			font-size: 3.2rem;
+		}
+	}
+
+	&__person {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		&-img {
+			height: 50vw;
+			width: 50vw;
+			border-radius: 50%;
+			margin-bottom: 2rem;
+			object-fit: cover;
+			object-position: -1rem;
+		}
+
+		&-description {
+			text-align: center;
+			& h3 {
+				font-size: 2rem;
+				font-weight: bold;
+				color: var(--color-primary);
+			}
+
+			& p {
+				font-size: 1.6rem;
+			}
+
+			&:last-child {
+				margin-bottom: 2rem;
+			}
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 2rem;
+		}
+
+		@include responsive(tab-port) {
+			flex-direction: row;
+
+			&-img {
+				height: 20vw;
+				width: 20vw;
+				margin: 0;
+			}
+
+			&-description {
+				text-align: left;
+				margin-left: 2rem;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			&:last-child {
+				margin-bottom: 2rem;
+			}
+		}
+
+		@include responsive(tab-land) {
+			&-img {
+				height: 10vw;
+				width: 10vw;
+			}
+		}
+
+		@include responsive(desktop) {
+			&-img {
+				height: 7.5vw;
+				width: 7.5vw;
+			}
+		}
+	}
+}

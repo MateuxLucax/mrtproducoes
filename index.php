@@ -5,7 +5,7 @@
 
     // Startup variables
     $title = 'Página Inicial';
-    $description = 'Fazemos de tudo um pouquinho, mas focamos em ensaios femininos externos e aniversários infantis.';
+    $description = 'Somos uma empresa de fotografia e vídeos de Gaspar - SC. Fazemos de tudo um pouquinho, mas focamos em ensaios femininos externos e aniversários infantis.';
     $root_path = './'; // Path relative to the root of the project
                                                                             // Params needed
     $nav = file_get_contents($root_path. "html/components/nav.html"); // {hero_mod} / {title}
