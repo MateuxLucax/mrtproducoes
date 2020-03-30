@@ -1,0 +1,11 @@
+.album {
+	&__container {
+		grid-column: center-start / center-end;
+
+		& h2 {
+			font-size: 4.8rem;
+			padding: 2rem;
+			color: var(--color-primary);
+		}
+	}
+}
