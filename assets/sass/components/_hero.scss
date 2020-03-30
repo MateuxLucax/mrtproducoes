@@ -133,4 +133,24 @@
 			}
 		}
 	}
+
+	&--albums {
+		&::before {
+			background-image: linear-gradient(
+					to left bottom,
+					rgba(var(--color-primary-light-rgb), 0.7),
+					rgba(var(--color-primary-rgb), 0.7)
+				),
+				url("../img/albuns/fundo-mobile.jpg");
+
+			@include responsive(tab-port) {
+				background-image: linear-gradient(
+						to left bottom,
+						rgba(var(--color-primary-light-rgb), 0.7),
+						rgba(var(--color-primary-rgb), 0.7)
+					),
+					url("../img/albuns/fundo.jpg");
+			}
+		}
+	}
 }

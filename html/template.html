@@ -57,6 +57,29 @@
 
   {{footer}}
 
+  <button onclick="topFunction()" style="opacity: 0;" class="scroll-top-btn" title="Ir para o topo da página"><i class="up"></i></button>
+
+  <script>
+    var mybutton = document.querySelector(".scroll-top-btn");
+    window.onscroll = () => scrollFunction();
+    function scrollFunction() {
+      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        mybutton.style.opacity = "1";
+        mybutton.style.visibility = "visible";
+        mybutton.style.display = "flex";
+      } else {
+        mybutton.style.opacity = "0";
+        mybutton.style.visibility = "hidden";
+        mybutton.style.display = "hidden";
+      }
+    }
+
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+
   <script>
     {{script}}
   </script>
