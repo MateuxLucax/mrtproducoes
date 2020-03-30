@@ -47,6 +47,7 @@ button {
 	&:active {
 		background-position: 100%;
 		color: var(--color-primary);
+		opacity: 0.8;
 	}
 
 	&--light {
@@ -102,6 +103,7 @@ button {
 
 	&:hover {
 		color: currentColor;
+		opacity: 0.8;
 
 		&::before {
 			visibility: visible;

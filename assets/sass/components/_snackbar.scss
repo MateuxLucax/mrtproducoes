@@ -1,0 +1,39 @@
+.snackbar {
+	visibility: hidden;
+	background-color: var(--color-grey);
+	width: max-content;
+	color: var(--color-white);
+	text-align: center;
+	padding: 1rem;
+	position: fixed;
+	z-index: 1;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 2rem;
+}
+
+.snackbar.show {
+	visibility: visible;
+	animation: fadein 0.6s, fadeout 0.6s 7.5s;
+}
+@keyframes fadein {
+	from {
+		bottom: 0;
+		opacity: 0;
+	}
+	to {
+		bottom: 2rem;
+		opacity: 1;
+	}
+}
+
+@keyframes fadeout {
+	from {
+		bottom: 2rem;
+		opacity: 1;
+	}
+	to {
+		bottom: 0;
+		opacity: 0;
+	}
+}

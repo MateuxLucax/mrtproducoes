@@ -15,6 +15,7 @@
 @import "components/buttons";
 @import "components/skew-bg";
 @import "components/card";
+@import "components/snackbar";
 @import "components/testimony";
 @import "components/video";
 
@@ -23,8 +24,10 @@
 @import "layout/header";
 @import "layout/footer";
 @import "layout/navigation";
+@import "layout/gallery";
 
 // PAGES
 @import "pages/home";
 @import "pages/clips";
+@import "pages/products";
 @import "pages/about";

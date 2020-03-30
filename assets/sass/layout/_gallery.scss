@@ -1,61 +1,48 @@
-// Adaptive Photo Layout by Tim Van Damme
-// https://codepen.io/maxvoltar/pen/eYOPdMG
+.gallery {
+	grid-column: full-start / full-end;
+	user-select: none;
 
-// BASIC
+	line-height: 0;
+	column-count: 1;
+	column-gap: 1rem;
+	padding: 1rem;
 
-ul .gallery {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-li.photo-container {
-	height: 40vh;
-	flex-grow: 1;
-
-	// There's no science in using "10" here. In all my testing, this delivered the best results.
-	&:last-child {
-		flex-grow: 10;
+	@include responsive(tab-port) {
+		column-count: 2;
 	}
-	& img {
-		max-height: 100%;
-		min-width: 100%;
-		object-fit: cover;
-		vertical-align: bottom;
+
+	@include responsive(tab-land) {
+		column-count: 3;
 	}
-}
 
-// ADVANCED
+	@include responsive(desktop) {
+		column-count: 4;
+	}
 
-// Portrait
-
-@media (max-aspect-ratio: 1/1) {
-	li.photo-container {
-		height: 30vh;
+	@include responsive(big-desktop) {
+		column-count: 5;
 	}
 }
 
-// Short screens
+.gallery img {
+	width: 100% !important;
+	height: auto !important;
+	transition: all 0.2s;
 
-@media (max-height: 37.5em) {
-	li.photo-container {
-		height: 80vh;
-	}
-}
-
-// Smaller screens in portrait
-
-@media (max-aspect-ratio: 1/1) and (max-width: 37.5em) {
-	ul {
-		flex-direction: row;
+	&:not(:last-child) {
+		padding-bottom: 1rem;
 	}
 
-	li.photo-container {
-		height: auto;
-		width: 100%;
-		& img {
-			width: 100%;
-			max-height: 75vh;
-			min-width: 0;
-		}
+	@include responsive(tab-port) {
+		padding-bottom: 1rem;
+	}
+
+	&:hover {
+		opacity: 0.7;
+		cursor: zoom-in;
+	}
+
+	&:fullscreen {
+		cursor: zoom-out;
 	}
 }
