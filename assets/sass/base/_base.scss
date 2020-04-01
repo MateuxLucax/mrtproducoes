@@ -25,6 +25,14 @@ html {
 	@include responsive(big-desktop) {
 		font-size: 75%;
 	}
+
+	@include responsive(huge-desktop) {
+		font-size: 100%;
+	}
+
+	@include responsive(insane-desktop) {
+		font-size: 200%;
+	}
 }
 
 body {

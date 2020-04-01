@@ -5,7 +5,6 @@
 class Conexao {
 	protected static $conexao;
 
-
 	private function __construct ()	{
 		$db_host = "185.224.138.217";
 		$db_nome = "u729591583_mrt";
@@ -18,7 +17,6 @@ class Conexao {
         $GLOBAL['tbAlbum'] = 'Album';
         $GLOBAL['tbFotos'] = 'Fotos';
         $GLOBAL['tbClipes'] = 'Clipes';
-        $GLOBAL['tbAdmin'] = 'Administrador';
 
 		try	{
 			self::$conexao = new PDO("$db_driver:host=$db_host; dbname=$db_nome", $db_usuario, $db_senha);

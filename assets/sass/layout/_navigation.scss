@@ -71,6 +71,10 @@
 		color: var(--color-white);
 		overflow: hidden;
 		position: relative;
+
+		@include responsive(tab-land) {
+			font-size: 2.4rem;
+		}
 	}
 
 	&__logo {
@@ -89,6 +93,14 @@
 			color: currentColor;
 			line-height: 1.6;
 			margin: 1rem 0;
+
+			@include responsive(tab-port) {
+				margin: 0.5rem 0;
+			}
+
+			@include responsive(tab-land) {
+				margin: 1rem 0;
+			}
 		}
 	}
 
@@ -97,6 +109,14 @@
 
 		&:not(:last-child) {
 			margin: 1rem 0;
+
+			@include responsive(tab-port) {
+				margin: 0.5rem 0;
+			}
+
+			@include responsive(tab-land) {
+				margin: 1rem 0;
+			}
 		}
 	}
 

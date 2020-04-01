@@ -7,13 +7,24 @@
 	}
 
 	&__albums {
+		padding: 2rem 0;
 		grid-column: center-start / center-end;
 		display: grid;
 		grid-template-rows: repeat(4, min-content);
 
+		& .composition {
+			width: 80%;
+			justify-self: center;
+			margin: 2rem 0;
+
+			@include responsive(tab-port) {
+				width: 75%;
+			}
+		}
+
 		@include responsive(tab-port) {
 			grid-template-rows: repeat(2, min-content);
-			grid-template-columns: 2fr 3fr;
+			grid-template-columns: repeat(2, 1fr);
 			& h1 {
 				grid-column: 1 / span 2;
 			}
@@ -28,7 +39,6 @@
 
 			& p {
 				margin-bottom: 7rem;
-				text-align: center;
 			}
 
 			& a {
@@ -40,7 +50,7 @@
 	&__clips {
 		grid-column: full-start / full-end;
 		display: grid;
-		padding: 4rem 0;
+		padding: 6rem 0;
 		grid-template-columns: var(--default-grid-col);
 
 		&-container {
@@ -50,13 +60,13 @@
 
 			@include responsive(tab-port) {
 				grid-template-rows: repeat(2, min-content);
-				grid-template-columns: 2fr 3fr;
+				grid-template-columns: repeat(2, 1fr);
 				& h1 {
 					grid-column: 1 / span 2;
 				}
 
 				& video {
-					padding-left: 6rem;
+					padding-left: 4rem;
 					position: relative;
 					grid-row: 2;
 					grid-column: 2;
@@ -73,7 +83,6 @@
 
 				& p {
 					margin-bottom: 7rem;
-					text-align: center;
 				}
 
 				& a {
@@ -86,7 +95,7 @@
 	&__social-proof {
 		grid-column: full-start / full-end;
 		display: grid;
-		padding: 4rem 0;
+		padding: 6rem 0;
 		grid-template-columns: var(--default-grid-col);
 
 		&-container {

@@ -36,4 +36,16 @@
 			@content;
 		} // 1700px
 	}
+
+	@if $breakpoint == huge-desktop {
+		@media only screen and (min-width: 162.5em) {
+			@content;
+		} // 2600px
+	}
+
+	@if $breakpoint == insane-desktop {
+		@media only screen and (min-width: 200em) {
+			@content;
+		} // 3600px
+	}
 }

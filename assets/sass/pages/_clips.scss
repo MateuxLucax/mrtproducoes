@@ -2,13 +2,24 @@
 	grid-template-rows: 40vh min-content;
 
 	&__container {
+		margin-top: 2rem;
 		display: grid;
 		grid-column: center-start / center-end;
 		grid-template-columns: 1fr;
+
 		@include responsive(tab-land) {
 			grid-template-columns: repeat(2, 1fr);
 			grid-gap: 2rem;
 		}
+	}
+
+	&__loader {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		margin: 3rem 0;
+		grid-column: center-start / center-end;
 	}
 
 	&__video-container {
@@ -17,13 +28,6 @@
 			color: var(--color-primary);
 			font-weight: 300;
 			font-family: var(--font-display);
-			&:first-child {
-				margin-top: 1rem;
-			}
 		}
-	}
-
-	&__btn {
-		grid-column: center-start / center-end;
 	}
 }

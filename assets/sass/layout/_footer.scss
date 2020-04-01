@@ -6,10 +6,6 @@
 	grid-column: full-start / full-end;
 	padding-top: 2rem;
 
-	@include responsive(tab-port) {
-		padding-top: 2rem;
-	}
-
 	&__box {
 		grid-column: center-start / center-end;
 		display: grid;
@@ -18,7 +14,7 @@
 	}
 
 	&__logo {
-		width: 6rem;
+		height: 6rem;
 	}
 
 	&__list {

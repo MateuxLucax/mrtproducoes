@@ -15,22 +15,9 @@
 		@include responsive(tab-port) {
 			grid-template-columns: repeat(2, 1fr);
 		}
-
-		@include responsive(tab-land) {
-			grid-template-columns: repeat(3, 1fr);
-		}
-
 		@include responsive(desktop) {
 			grid-template-columns: repeat(4, 1fr);
 		}
-
-		@include responsive(big-desktop) {
-			grid-template-columns: repeat(5, 1fr);
-		}
-	}
-
-	&__btn {
-		grid-column: center-start / center-end;
 	}
 }
 
@@ -46,7 +33,6 @@
 		position: relative;
 		user-select: none;
 		transition: all 0.2s;
-		box-shadow: var(--box-shadow-small);
 
 		&:hover {
 			transform: scale(1.005);

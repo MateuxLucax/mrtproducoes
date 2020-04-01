@@ -35,6 +35,16 @@
 
 	&__img {
 		width: 8rem;
+
+		@include responsive(tab-port) {
+			margin-top: -2rem;
+			width: 6rem;
+		}
+
+		@include responsive(tab-land) {
+			width: 8rem;
+			margin-top: 0;
+		}
 	}
 
 	&__title {
@@ -55,15 +65,15 @@
 		&::before {
 			background-image: linear-gradient(
 					to left bottom,
-					rgba(var(--color-primary-light-rgb), 0.7),
-					rgba(var(--color-primary-rgb), 0.7)
+					rgba(var(--color-primary-light-rgb), 0.6),
+					rgba(var(--color-primary-rgb), 0.6)
 				),
 				url("../img/pagina-inicial/fundo-mobile.jpg");
 			@include responsive(tab-port) {
 				background-image: linear-gradient(
 						to left bottom,
-						rgba(var(--color-primary-light-rgb), 0.7),
-						rgba(var(--color-primary-rgb), 0.7)
+						rgba(var(--color-primary-light-rgb), 0.6),
+						rgba(var(--color-primary-rgb), 0.6)
 					),
 					url("../img/pagina-inicial/fundo.jpg");
 			}
@@ -78,16 +88,16 @@
 		&::before {
 			background-image: linear-gradient(
 					to left bottom,
-					rgba(var(--color-primary-light-rgb), 0.7),
-					rgba(var(--color-primary-rgb), 0.7)
+					rgba(var(--color-primary-light-rgb), 0.6),
+					rgba(var(--color-primary-rgb), 0.6)
 				),
 				url("../img/clipes/fundo-mobile.jpg");
 
 			@include responsive(tab-port) {
 				background-image: linear-gradient(
 						to left bottom,
-						rgba(var(--color-primary-light-rgb), 0.7),
-						rgba(var(--color-primary-rgb), 0.7)
+						rgba(var(--color-primary-light-rgb), 0.6),
+						rgba(var(--color-primary-rgb), 0.6)
 					),
 					url("../img/clipes/fundo.jpg");
 			}
@@ -98,16 +108,16 @@
 		&::before {
 			background-image: linear-gradient(
 					to left bottom,
-					rgba(var(--color-primary-light-rgb), 0.7),
-					rgba(var(--color-primary-rgb), 0.7)
+					rgba(var(--color-primary-light-rgb), 0.6),
+					rgba(var(--color-primary-rgb), 0.6)
 				),
 				url("../img/sobre/fundo-mobile.jpg");
 
 			@include responsive(tab-port) {
 				background-image: linear-gradient(
 						to left bottom,
-						rgba(var(--color-primary-light-rgb), 0.7),
-						rgba(var(--color-primary-rgb), 0.7)
+						rgba(var(--color-primary-light-rgb), 0.6),
+						rgba(var(--color-primary-rgb), 0.6)
 					),
 					url("../img/sobre/fundo.jpg");
 			}
@@ -118,16 +128,16 @@
 		&::before {
 			background-image: linear-gradient(
 					to left bottom,
-					rgba(var(--color-primary-light-rgb), 0.7),
-					rgba(var(--color-primary-rgb), 0.7)
+					rgba(var(--color-primary-light-rgb), 0.6),
+					rgba(var(--color-primary-rgb), 0.6)
 				),
 				url("../img/fotos-de-produtos/fundo-mobile.jpg");
 
 			@include responsive(tab-port) {
 				background-image: linear-gradient(
 						to left bottom,
-						rgba(var(--color-primary-light-rgb), 0.7),
-						rgba(var(--color-primary-rgb), 0.7)
+						rgba(var(--color-primary-light-rgb), 0.6),
+						rgba(var(--color-primary-rgb), 0.6)
 					),
 					url("../img/fotos-de-produtos/fundo.jpg");
 			}
@@ -138,16 +148,16 @@
 		&::before {
 			background-image: linear-gradient(
 					to left bottom,
-					rgba(var(--color-primary-light-rgb), 0.7),
-					rgba(var(--color-primary-rgb), 0.7)
+					rgba(var(--color-primary-light-rgb), 0.6),
+					rgba(var(--color-primary-rgb), 0.6)
 				),
 				url("../img/albuns/fundo-mobile.jpg");
 
 			@include responsive(tab-port) {
 				background-image: linear-gradient(
 						to left bottom,
-						rgba(var(--color-primary-light-rgb), 0.7),
-						rgba(var(--color-primary-rgb), 0.7)
+						rgba(var(--color-primary-light-rgb), 0.6),
+						rgba(var(--color-primary-rgb), 0.6)
 					),
 					url("../img/albuns/fundo.jpg");
 			}

@@ -2,18 +2,6 @@
 	display: grid;
 	position: relative;
 	grid-template-columns: repeat(12, 1fr);
-	padding: 2rem 0;
-	@include responsive(tab-port) {
-		padding: 0 0 0 10rem;
-	}
-
-	@include responsive(tab-land) {
-		padding: 0 0 2rem 16rem;
-	}
-
-	@include responsive(desktop) {
-		padding: 0 0 4rem 20rem;
-	}
 
 	&__item {
 		position: relative;
@@ -44,6 +32,10 @@
 				transform: scale(1.05);
 			}
 		}
+	}
+
+	&:hover &__item:not(:hover) {
+		transform: scale(0.95);
 	}
 
 	& img {

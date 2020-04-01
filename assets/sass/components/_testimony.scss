@@ -1,12 +1,10 @@
 .testimony {
 	display: flex;
 	flex-direction: column;
-	margin-bottom: 3rem;
 	position: relative;
-
-	@include responsive(tab-land) {
-		grid-row: 2;
-	}
+	padding: 2rem 0;
+	align-items: center;
+	justify-content: center;
 
 	&__user-img {
 		width: 6rem;
@@ -18,8 +16,10 @@
 	}
 
 	&__user-box {
+		padding: 0 2rem;
 		display: flex;
 		align-items: center;
+		justify-content: center;
 	}
 
 	&__user-name {
@@ -31,40 +31,48 @@
 
 	&__text {
 		font-size: 1.6rem;
+		padding: 0 2rem;
+		text-align: center;
 		color: var(--color-white);
 	}
 
-	@include responsive(tab-land) {
-		padding-left: 2rem;
-	}
-
 	&:not(:last-child) {
-		@include responsive(tab-land) {
-			padding: 0;
-			padding-right: 2rem;
-
-			&::before {
-				content: "";
-				position: absolute;
-				background-color: var(--color-white);
-				height: 100% !important;
-				width: 0.1rem !important;
-				right: 0 !important;
-				bottom: unset !important;
-				left: unset !important;
-			}
-		}
-
-		padding: 2rem 0;
-
 		&::before {
 			content: "";
 			position: absolute;
 			background-color: var(--color-white);
-			width: 100%;
+			width: 90%;
 			height: 0.1rem;
 			bottom: 0;
-			left: 0;
+			left: 5%;
+		}
+	}
+
+	@include responsive(tab-land) {
+		&:not(:last-child) {
+			&::before {
+				width: 0;
+				height: 0;
+			}
+		}
+
+		&:nth-child(even) {
+			&::after {
+				content: "";
+				position: absolute;
+				background-color: var(--color-white);
+				height: 90%;
+				width: 0.1rem;
+				right: 0;
+				bottom: 5%;
+			}
+		}
+
+		&:not(:nth-last-of-type(-n + 2)) {
+			&::before {
+				width: 90%;
+				height: 0.1rem;
+			}
 		}
 	}
 }
