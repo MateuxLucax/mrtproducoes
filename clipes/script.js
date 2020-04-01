@@ -1,4 +1,4 @@
-videoContainer = document.querySelector(".clips__container");
+var videoContainer = document.querySelector(".clips__container");
 
 document.addEventListener("DOMContentLoaded", function() {
 	resetPage();

@@ -13,6 +13,7 @@
     $footer = file_get_contents($root_path. "html/components/footer.html"); // {theme}
     $page = file_get_contents($root_path. "html/template.html"); // {title} / {root_path} / {page_layout} / {{header}} / {{content}} / {{footer}} / {{script}}
     $script = file_get_contents($root_path. "assets/js/script.js");
+    $script .= file_get_contents($root_path. "albuns/script.js");
     $content = file_get_contents($root_path. "albuns/main.html");
 
     // Custom params

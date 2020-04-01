@@ -9,6 +9,15 @@
 		}
 	}
 
+	&__loader {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		margin: 3rem 0;
+		grid-column: center-start / center-end;
+	}
+
 	& .gallery {
 		padding: 0 1rem;
 	}

@@ -1,58 +1,163 @@
-window.setTimeout(() => {
-	(document.querySelector("#navigation").style.visibility = "visible"),
-		snackbar();
-}, 400);
+	var h2 = document.querySelector("#titulo");
+	var gallery = document.querySelector(".gallery");
 
-function toggleFullscreen(elem) {
-	elem = elem || document.documentElement;
-	if (
-		!document.fullscreenElement &&
-		!document.mozFullScreenElement &&
-		!document.webkitFullscreenElement &&
-		!document.msFullscreenElement
-	) {
-		if (elem.requestFullscreen) {
-			elem.requestFullscreen();
-		} else if (elem.msRequestFullscreen) {
-			elem.msRequestFullscreen();
-		} else if (elem.mozRequestFullScreen) {
-			elem.mozRequestFullScreen();
-		} else if (elem.webkitRequestFullscreen) {
-			elem.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+	document.addEventListener("DOMContentLoaded", function() {
+		resetPage();
+		displayTitle();
+		displayAlbum();
+	});
+
+	function CriaRequest() {
+		try {
+			request = new XMLHttpRequest();
+		} catch (IEAtual) {
+			try {
+				request = new ActiveXObject("Msxml2.XMLHTTP");
+			} catch (IEAntigo) {
+				try {
+					request = new ActiveXObject("Microsoft.XMLHTTP");
+				} catch (falha) {
+					request = false;
+				}
+			}
 		}
-	} else {
-		if (document.exitFullscreen) {
-			document.exitFullscreen();
-		} else if (document.msExitFullscreen) {
-			document.msExitFullscreen();
-		} else if (document.mozCancelFullScreen) {
-			document.mozCancelFullScreen();
-		} else if (document.webkitExitFullscreen) {
-			document.webkitExitFullscreen();
+
+		if (!request) alert("Seu Navegador não suporta Ajax!");
+		else return request;
+	}
+
+	async function displayAlbum() {
+		carregando(true);
+		var xmlreq = CriaRequest();
+
+		xmlreq.open(
+			"GET",
+			`./../../controllers/album.php?page=${getPage()}&id=${getAlbum()}`,
+			true
+		);
+
+		xmlreq.onreadystatechange = await function() {
+			if (xmlreq.readyState == 4) {
+				if (xmlreq.status == 200) {
+					var requestResponse = JSON.parse(xmlreq.response);
+					if (requestResponse !== "") {
+						if (requestResponse.length > 0) {
+							hideLoader();
+							printAlbum(requestResponse);
+							addPage();
+							carregando(false);
+						} else {
+							destroyLoader(true);
+						}
+					} else {
+						hideLoader();
+					}
+				} else {
+					alert("Erro ao carregar as fotos, tente recarregar a página.");
+				}
+			}
+		};
+		xmlreq.send(null);
+	}
+
+	async function displayTitle() {
+		carregando(true);
+		var xmlreq = CriaRequest();
+
+		xmlreq.open(
+			"GET",
+			`./../../controllers/album.php?id=${getAlbum()}&getTitle=true`,
+			true
+		);
+
+		xmlreq.onreadystatechange = await function() {
+			if (xmlreq.readyState == 4) {
+				if (xmlreq.status == 200) {
+					var requestResponse = JSON.parse(xmlreq.response);
+					if (requestResponse !== "") {
+						if (requestResponse.length > 0) {
+							printTitle(requestResponse);
+							snackbar();
+						}
+					}
+				} else {
+					alert("Erro ao carregar o titulo do álbum, tente recarregar a página.");
+				}
+			}
+		};
+		xmlreq.send(null);
+	}
+
+	window.onscroll = function() {
+		if (
+			window.innerHeight + window.pageYOffset >= document.body.offsetHeight &&
+			getCarregando() === false
+		) {
+			this.showLoader();
+			this.displayAlbum();
+		}
+	};
+
+	function hideLoader() {
+		if (destroyLoader() === false) {
+			var clipsLoaderElement = document.querySelector(".clips__loader");
+			clipsLoaderElement.style.display = "none";
 		}
 	}
-}
 
-function isTouchDevice() {
-	try {
-		document.createEvent("TouchEvent");
-		return true;
-	} catch (e) {
-		return false;
+	function showLoader() {
+		if (destroyLoader() === false) {
+			var clipsLoaderElement = document.querySelector(".clips__loader");
+			clipsLoaderElement.style.display = "flex";
+		}
 	}
-}
 
-snackbarElement = document.querySelector(".snackbar");
-snackbarElement = isTouchDevice()
-	? (snackbarElement.innerHTML =
-			"Toque em uma imagem para ampliá-la. <br/> Para voltar a navegação toque nela novamente.")
-	: (snackbarElement.innerHTML =
-			"Clique em uma imagem para ampliá-la. <br/> Para voltar a navegação clique nela novamente.");
+	function destroyLoader(destroy = false) {
+		if (destroy === true) {
+			document.querySelector(".loader-value").remove();
+			document.querySelector(".loader").remove();
+			document.querySelector(".clips__loader").remove();
+		}
 
-function snackbar() {
-	snackbarElement = document.querySelector(".snackbar");
-	snackbarElement.className = "snackbar show";
-	setTimeout(function() {
-		snackbarElement.className = snackbarElement.className.replace("show", "");
-	}, 8000);
-}
+		return destroy;
+	}
+
+	function addPage() {
+		pageElement = document.querySelector("#page");
+		pageNumber = parseInt(pageElement.value);
+		pageNumber++;
+		pageElement.value = pageNumber;
+	}
+
+	function resetPage() {
+		pageElement = document.querySelector("#page").value = 1;
+	}
+
+	function getPage() {
+		pageElement = document.querySelector("#page");
+		return parseInt(pageElement.value);
+	}
+
+	function printAlbum(album) {
+		album.forEach(foto => {
+			let markup = `<img src="${foto.link}" loading="lazy" onclick="toggleFullscreen(this)" alt="Foto ${foto.codigo_foto}">`;
+			gallery.insertAdjacentHTML("beforeend", markup);
+		});
+		album = undefined;
+	}
+
+	function printTitle(title) {
+		h2.innerHTML = title[0].titulo;
+	}
+
+	function carregando(status) {
+		document.querySelector("#loading").value = status;
+	}
+
+	function getCarregando() {
+		return document.querySelector("#loading").value === "true";
+	}
+
+	function getAlbum() {
+		return parseInt(document.querySelector("#album").value);
+	}

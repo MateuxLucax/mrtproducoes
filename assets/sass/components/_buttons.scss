@@ -26,6 +26,7 @@ button {
 	&:visited {
 		height: min-content;
 		font-size: 1.6rem;
+		width: 100%;
 		display: inline-block;
 		padding: 1rem 2rem;
 		color: var(--color-white);
@@ -40,10 +41,9 @@ button {
 		background-size: 220%;
 		transition: all 0.4s;
 		text-align: center;
-		width: 100%;
 		backface-visibility: hidden;
 		@include responsive(tab-port) {
-			width: fit-content;
+			width: max-content;
 			padding: 1rem 4rem;
 		}
 	}

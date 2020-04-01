@@ -2,20 +2,22 @@
 
     $pageNumber = isset($_GET['page']) ? $_GET['page'] : 1;
 
-    $numberOfItemsPerPage = 4;
+    $albumProdutos = 25; // Altera aqui o código do álbum dos produtos
+
+    $numberOfItemsPerPage = 8;
     $offset = ($pageNumber - 1) * $numberOfItemsPerPage;
 
     require_once 'classes/Conexao.class.php';
 
     $connection = Conexao::conexao();
 
-    $sql = 'SELECT * FROM `Clipes` ORDER BY `codigo` DESC LIMIT '. $offset. ', '. $numberOfItemsPerPage;
+    $sql = 'SELECT * FROM `Album` WHERE `codigo` != '. $albumProdutos. ' ORDER BY `codigo` DESC  LIMIT '. $offset. ', '. $numberOfItemsPerPage;
 
     $query = $connection->query($sql, PDO::FETCH_ASSOC);
-    $clipes = $query->fetchAll();
+    $albuns = $query->fetchAll();
 
     header('Content-Type: application/json');
-    $JSON = json_encode($clipes);
+    $JSON = json_encode($albuns);
     
     echo $JSON;
 

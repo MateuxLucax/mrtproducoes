@@ -1,9 +1,8 @@
-var gallery = document.querySelector(".gallery");
+var albunsContainer = document.querySelector(".albuns__container");
 
 document.addEventListener("DOMContentLoaded", function() {
 	resetPage();
-	displayAlbum();
-	snackbar();
+	displayAlbums();
 });
 
 function CriaRequest() {
@@ -25,15 +24,11 @@ function CriaRequest() {
 	else return request;
 }
 
-async function displayAlbum() {
+async function displayAlbums() {
 	carregando(true);
 	var xmlreq = CriaRequest();
 
-	xmlreq.open(
-		"GET",
-		`./../controllers/album.php?page=${getPage()}&id=${getAlbum()}`,
-		true
-	);
+	xmlreq.open("GET", `./../controllers/albuns.php?page=${getPage()}`, true);
 
 	xmlreq.onreadystatechange = await function() {
 		if (xmlreq.readyState == 4) {
@@ -42,7 +37,7 @@ async function displayAlbum() {
 				if (requestResponse !== "") {
 					if (requestResponse.length > 0) {
 						hideLoader();
-						printAlbum(requestResponse);
+						printAlbums(requestResponse);
 						addPage();
 						carregando(false);
 					} else {
@@ -52,7 +47,7 @@ async function displayAlbum() {
 					hideLoader();
 				}
 			} else {
-				alert("Erro ao carregar as fotos, tente recarregar a página.");
+				alert("Erro ao carregar os álbuns, tente recarregar a página.");
 			}
 		}
 	};
@@ -65,7 +60,7 @@ window.onscroll = function() {
 		getCarregando() === false
 	) {
 		this.showLoader();
-		this.displayAlbum();
+		this.displayAlbums();
 	}
 };
 
@@ -109,12 +104,21 @@ function getPage() {
 	return parseInt(pageElement.value);
 }
 
-function printAlbum(album) {
-	album.forEach(foto => {
-		let markup = `<img src="${foto.link}" loading="lazy" onclick="toggleFullscreen(this)" alt="Foto ${foto.codigo_foto}">`;
-		gallery.insertAdjacentHTML("beforeend", markup);
+function printAlbums(albums) {
+	albums.forEach(album => {
+		let markup = `<a href="album/?id=${album.codigo}"  class="album-link__cta">
+                            <div class="album-link__container">
+                                <img src="${album.capa}" alt="Capa ${album.codigo}" loading="lazy" class="album-link__img">
+                                <span class="album-link__title">
+                                    <span class="album-link__title--span">
+                                        ${album.titulo}
+                                    </span>
+                                </span>
+                            </div>
+						</a>`;
+		albunsContainer.insertAdjacentHTML("beforeend", markup);
 	});
-	album = undefined;
+	albums = undefined;
 }
 
 function carregando(status) {
@@ -123,8 +127,4 @@ function carregando(status) {
 
 function getCarregando() {
 	return document.querySelector("#loading").value === "true";
-}
-
-function getAlbum() {
-	return parseInt(document.querySelector("#album").value);
 }

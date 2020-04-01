@@ -7,7 +7,7 @@
 	}
 
 	&__albums {
-		padding: 2rem 0;
+		padding: 3rem 0;
 		grid-column: center-start / center-end;
 		display: grid;
 		grid-template-rows: repeat(4, min-content);
@@ -66,10 +66,10 @@
 				}
 
 				& video {
-					padding-left: 4rem;
+					padding-right: 4rem;
 					position: relative;
 					grid-row: 2;
-					grid-column: 2;
+					grid-column: 1 / 2;
 					align-self: center;
 				}
 
@@ -77,12 +77,13 @@
 				a {
 					position: relative;
 					grid-row: 2;
-					grid-column: 1;
+					grid-column: 2 / 3;
 					align-self: center;
 				}
 
 				& p {
 					margin-bottom: 7rem;
+					padding: 0 4rem;
 				}
 
 				& a {
@@ -119,6 +120,7 @@
 	&__change-perspective {
 		grid-column: full-start / full-end;
 		display: grid;
+		padding: 3rem 0;
 		grid-template-columns: var(--default-grid-col);
 
 		& > .video {
@@ -131,6 +133,33 @@
 
 		&-container {
 			grid-column: center-start / center-end;
+			margin: 2rem 0;
+
+			@include responsive(tab-port) {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-rows: min-content min-content;
+
+				& video {
+					padding-right: 4rem;
+					position: relative;
+					grid-row: 2;
+					grid-column: 2 / 3;
+					align-self: center;
+				}
+
+				& p {
+					align-self: center;
+					padding: 0 4rem;
+					grid-column: 1 / 2;
+					grid-row: 2;
+				}
+
+				& h1 {
+					grid-row: 1;
+					grid-column: 1 / 3;
+				}
+			}
 		}
 	}
 

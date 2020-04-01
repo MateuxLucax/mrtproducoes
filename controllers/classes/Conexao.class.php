@@ -2,6 +2,9 @@
 
 // Uso: $pdo = Conexao::conexao();
 // $pdo->prepare("SELECT * FROM tabela"); etc
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+
 class Conexao {
 	protected static $conexao;
 

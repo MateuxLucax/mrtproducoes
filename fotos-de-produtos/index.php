@@ -12,10 +12,14 @@
     $header = file_get_contents($root_path. "html/components/header.html"); // {root_path} / {1}, {2}, {3}, {4}, {5} --> Active page. Use "active" for activation 
     $footer = file_get_contents($root_path. "html/components/footer.html"); // {theme}
     $page = file_get_contents($root_path. "html/template.html"); // {title} / {root_path} / {page_layout} / {{header}} / {{content}} / {{footer}} / {{script}}
-    $script = file_get_contents($root_path. "fotos-de-produtos/script.js");
+    $script = file_get_contents($root_path. "assets/js/script.js");
+    $script .= file_get_contents($root_path. "assets/js/fullscreen.js");
+    $script .= file_get_contents($root_path. "assets/js/snackbar.js");
+    $script .= file_get_contents($root_path. "fotos-de-produtos/script.js");
     $content = file_get_contents($root_path. "fotos-de-produtos/main.html");
 
     // Custom params
+    $albumId = 25; // Altera aqui para mudar o album de produtos
     $hero_mod = "hero--products";
     $page_layout = "products";
     $active = "active";
@@ -35,6 +39,7 @@
     $page = str_replace("{hero_logo}", $hero_logo, $page);
     $page = str_replace("{4}", $active, $page);
     $page = str_replace("{theme}", $theme, $page);
+    $page = str_replace("{albumId}", $albumId, $page);
     $page = str_replace("{page_layout}", $page_layout, $page);
     
     print($page);
