@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+  <!-- 
+    
+    Desenvolvido por @mateuxlucax 
+       github.com/mateuxlucax
+  
+      "We've always defined
+     ourselves by the ability
+    to overcome the impossible"
+  
+  -->
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.0" />
+  <meta name="theme-color" content="#8758A6" />
+  <title>MRT Produções &mdash; Offline </title>
+
+  <!-- Meta Tags -->
+  <meta name="description" content="{description}" />
+  <meta name="language" content="PT" />
+  <meta name="keywords" content="MRT Produções, Clipes, Ensaios" />
+  <meta name="rating" content="general">
+  <meta name="distribution" content="global">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="white">
+  <meta name="apple-mobile-web-app-title" content="MRT Produções">
+  <link rel="apple-touch-icon" sizes="192x192" href="./assets/img/icons/icon-192x192.png">
+
+  <!-- Manifest -->
+  <link rel="manifest" href="./manifest.json">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./assets/img/icons/favicon.png" />
+  <link rel="apple-touch-icon" href="./assets/img/icons/favicon.png" />
+
+  <!-- CSS -->
+  <style>
+
+
+    *,
+    *::after,
+    *::before {
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit;
+        scroll-behavior: smooth;
+    }
+      body {
+          margin: 0;
+          padding: 0;
+	     box-sizing: border-box;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          background-color: #F2F2F2;
+          font-family: sans-serif;
+          min-height: 100vh;
+          text-align: center;
+        }
+
+        *::selection {
+            background: #5a3473;
+            color: #F2F2F2;
+        }
+
+
+      h1 {
+          color: #5a3473;
+          font-size: 48px;
+          padding: 0 48px;
+          margin-bottom: 48px;
+      }
+
+      h6 {
+        color: #8758a6;
+        font-size: 32px;
+        padding: 0 48px;
+      }
+  </style>
+
+</head>
+
+<body>
+
+    <h1>Você está Offline</h1>
+    <h6>Para acessar o MRT Produções, por favor, conecte-se à internet!</h6>
+
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./service-worker.js')
+        .then(reg => console.info('Service worker registrado', reg))
+        .catch(err => console.error('Erro ao registrar o service worker', err));
+    }
+  </script>
+
+</body>
+
+</html>

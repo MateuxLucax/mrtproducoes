@@ -31,10 +31,10 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="white">
   <meta name="apple-mobile-web-app-title" content="MRT Produções">
-  <link rel="apple-touch-icon" sizes="256x256" href="{root_path}assets/img/icons/favicon.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="{root_path}assets/img/icons/icon-192x192.png">
 
   <!-- Manifest -->
-  <!-- <link rel="manifest" href="{root_path}assets/pwa/manifest.json"> -->
+  <link rel="manifest" href="{root_path}manifest.json">
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="{root_path}assets/img/icons/favicon.png" />
@@ -61,28 +61,15 @@
 
   {{content}}
 
-  {{footer}}
-
   <button onclick="topFunction()" style="opacity: 0;" class="scroll-top-btn" title="Ir para o topo da página"><i class="up"></i></button>
 
-  <script>
-    var mybutton = document.querySelector(".scroll-top-btn");
-    window.onscroll = () => scrollFunction();
-    function scrollFunction() {
-      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-        mybutton.style.opacity = "1";
-        mybutton.style.visibility = "visible";
-        mybutton.style.display = "flex";
-      } else {
-        mybutton.style.opacity = "0";
-        mybutton.style.visibility = "hidden";
-        mybutton.style.display = "hidden";
-      }
-    }
+  {{footer}}
 
-    function topFunction() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('{root_path}service-worker.js')
+        .then(reg => console.info('Service worker registrado', reg))
+        .catch(err => console.error('Erro ao registrar o service worker', err));
     }
   </script>
 

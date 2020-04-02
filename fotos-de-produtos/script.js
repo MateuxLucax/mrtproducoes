@@ -60,9 +60,24 @@ async function displayAlbum() {
 }
 
 window.onscroll = function() {
+	if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+		mybutton.style.opacity = "1";
+		mybutton.style.visibility = "visible";
+		mybutton.style.display = "flex";
+	} else {
+		mybutton.style.opacity = "0";
+		mybutton.style.visibility = "hidden";
+		mybutton.style.display = "hidden";
+	}
+
 	if (
-		window.innerHeight + window.pageYOffset >= document.body.offsetHeight &&
-		getCarregando() === false
+		(window.innerHeight + Math.ceil(window.pageYOffset) >=
+			document.body.offsetHeight &&
+			getCarregando() === false) ||
+		(window.innerHeight + window.pageYOffset >= document.body.offsetHeight &&
+			getCarregando() === false) ||
+		(window.innerHeight + window.scrollY >= document.body.scrollHeight - 2 &&
+			getCarregando() === false)
 	) {
 		this.showLoader();
 		this.displayAlbum();
