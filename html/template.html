@@ -1,82 +1,86 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+  <!DOCTYPE html>
+  <html lang="pt-BR">
 
-  <!-- 
+    <!-- 
+      
+      Desenvolvido por @mateuxlucax 
+        github.com/mateuxlucax
     
-    Desenvolvido por @mateuxlucax 
-       github.com/mateuxlucax
+        "We've always defined
+      ourselves by the ability
+      to overcome the impossible"
+    
+    -->
+
+  <head>
+    <meta name="author" content="Mateus Lucas Cruz Brandt">
+    <link rel="me" type="text" href="https://github.com/MateuxLucax">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.0" />
+    <meta name="theme-color" content="#8758A6" />
+    <title>MRT Produções &mdash; {title} </title>
+
+    <!-- Meta Tags -->
+    <meta name="description" content="{description}" />
+    <meta name="language" content="PT" />
+    <meta name="keywords" content="MRT Produções, Clipes, Ensaios" />
+    <meta name="robot" content="Index, Follow">
+    <meta name="rating" content="general">
+    <meta name="distribution" content="global">
+
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="apple-mobile-web-app-title" content="MRT Produções">
+    <link rel="apple-touch-icon" sizes="192x192" href="{root_path}assets/img/icons/icon-192x192.png">
+
+    <!-- Manifest -->
+    <link rel="manifest" href="{root_path}manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{root_path}assets/img/icons/favicon.png" />
+    <link rel="apple-touch-icon" href="{root_path}assets/img/icons/favicon.png" />
+
+    <!-- Webfonts -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="preload"
+      href="https://use.typekit.net/af/1b925c/00000000000000000000fd86/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3"
+      as="font" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.typekit.net/dpf2exc.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{root_path}assets/css/style.css">
+  </head>
+
+  <body class="container {page_layout}">
+
+    {{nav}}
+
+    {{header}}
+
+    {{content}}
+
+    <button onclick="topFunction()" style="opacity: 0;" class="scroll-top-btn" title="Ir para o topo da página"><i class="up"></i></button>
+
+    {{footer}}
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('{root_path}service-worker.js')
+          .then(reg => console.info('Service worker registrado', reg))
+          .catch(err => console.error('Erro ao registrar o service worker', err));
+      }
+    </script>
+
+    <script>
+      {{script}}
+    </script>
+    
+    <script data-ad-client="ca-pub-7415217743082837" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   
-      "We've always defined
-     ourselves by the ability
-    to overcome the impossible"
-  
-  -->
+  </body>
 
-<head>
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.0" />
-  <meta name="theme-color" content="#8758A6" />
-  <title>MRT Produções &mdash; {title} </title>
-
-  <!-- Meta Tags -->
-  <meta name="description" content="{description}" />
-  <meta name="language" content="PT" />
-  <meta name="keywords" content="MRT Produções, Clipes, Ensaios" />
-  <meta name="robot" content="Index, Follow">
-  <meta name="rating" content="general">
-  <meta name="distribution" content="global">
-
-  <!-- iOS meta tags & icons -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="white">
-  <meta name="apple-mobile-web-app-title" content="MRT Produções">
-  <link rel="apple-touch-icon" sizes="192x192" href="{root_path}assets/img/icons/icon-192x192.png">
-
-  <!-- Manifest -->
-  <link rel="manifest" href="{root_path}manifest.json">
-
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="{root_path}assets/img/icons/favicon.png" />
-  <link rel="apple-touch-icon" href="{root_path}assets/img/icons/favicon.png" />
-
-  <!-- Webfonts -->
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-  <link rel="preload"
-    href="https://use.typekit.net/af/1b925c/00000000000000000000fd86/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3"
-    as="font" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700" rel="stylesheet" />
-  <link rel="stylesheet" href="https://use.typekit.net/dpf2exc.css">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="{root_path}assets/css/style.css">
-</head>
-
-<body class="container {page_layout}">
-
-  {{nav}}
-
-  {{header}}
-
-  {{content}}
-
-  <button onclick="topFunction()" style="opacity: 0;" class="scroll-top-btn" title="Ir para o topo da página"><i class="up"></i></button>
-
-  {{footer}}
-
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('{root_path}service-worker.js')
-        .then(reg => console.info('Service worker registrado', reg))
-        .catch(err => console.error('Erro ao registrar o service worker', err));
-    }
-  </script>
-
-  <script>
-    {{script}}
-  </script>
-
-</body>
-
-</html>
+  </html>
