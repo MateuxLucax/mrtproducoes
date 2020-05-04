@@ -1,0 +1,91 @@
+.partners {
+	grid-template-rows: 40vh min-content;
+
+	&__container {
+		margin: 2rem 0;
+		display: grid;
+		grid-column: center-start / center-end;
+		grid-template-columns: 1fr;
+		grid-gap: 2rem;
+
+		@include responsive(tab-port) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include responsive(tab-land) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@include responsive(big-desktop) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+
+	&__loader {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		margin: 3rem 0;
+		grid-column: center-start / center-end;
+	}
+}
+
+.partner {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-width: 50%;
+	box-shadow: var(--box-shadow-medium);
+	padding: 3rem;
+	text-align: center;
+
+	&__img {
+		border-radius: 50%;
+		width: 45vw;
+		height: 45vw;
+		object-fit: cover;
+		object-position: center;
+		margin-bottom: 3rem;
+
+		@include responsive(tab-port) {
+			width: 22.5vw;
+			height: 22.5vw;
+		}
+
+		@include responsive(tab-land) {
+			width: 15vw;
+			height: 15vw;
+		}
+
+		@include responsive(big-desktop) {
+			width: 11.25vw;
+			height: 11.25vw;
+		}
+	}
+
+	&__name {
+		margin-bottom: 2rem;
+		font-weight: 700;
+		color: var(--color-primary);
+		font-size: 3.2rem;
+
+		@include responsive(tab-land) {
+			font-size: 2.4rem;
+		}
+	}
+
+	&__role {
+		margin-bottom: 3rem;
+		font-weight: 400;
+		font-size: 2.4rem;
+
+		@include responsive(tab-land) {
+			font-size: 1.8rem;
+		}
+	}
+	& a {
+		max-width: 45vw;
+	}
+}

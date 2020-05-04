@@ -1,5 +1,4 @@
-var hoje = new Date();
-const staticCacheName = "mrt-producoes-1.0-" + hoje.getTime();
+const staticCacheName = "mrt-producoes-2.0";
 const filesToCache = [
 	// Pages
 	"offline.html",
@@ -32,39 +31,38 @@ const filesToCache = [
 	"assets/img/pagina-inicial/fundo.jpg",
 	"assets/img/pagina-inicial/fundo-mobile.jpg",
 	"assets/img/sobre/fundo.jpg",
-	"assets/img/sobre/fundo-mobile.jpg"
+	"assets/img/sobre/fundo-mobile.jpg",
 ];
 
 // Cache on install
-this.addEventListener("install", event => {
+this.addEventListener("install", (event) => {
 	this.skipWaiting();
 	event.waitUntil(
-		caches.open(staticCacheName).then(cache => {
+		caches.open(staticCacheName).then((cache) => {
 			return cache.addAll(filesToCache);
 		})
 	);
 });
 
 // Clear cache on activate
-this.addEventListener("activate", event => {
+this.addEventListener("activate", (event) => {
 	event.waitUntil(
-		caches.keys().then(cacheNames => {
+		caches.keys().then((cacheNames) => {
 			return Promise.all(
 				cacheNames
-					.filter(cacheName => cacheName.startsWith("mrt-producoes-"))
-					.filter(cacheName => cacheName !== staticCacheName)
-					.map(cacheName => caches.delete(cacheName))
+					.filter((cacheName) => cacheName !== staticCacheName)
+					.map((cacheName) => caches.delete(cacheName))
 			);
 		})
 	);
 });
 
 // Serve from Cache
-this.addEventListener("fetch", event => {
+this.addEventListener("fetch", (event) => {
 	event.respondWith(
 		caches
 			.match(event.request)
-			.then(response => {
+			.then((response) => {
 				return response || fetch(event.request);
 			})
 			.catch(() => {

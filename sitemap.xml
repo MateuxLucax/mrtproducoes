@@ -4,8 +4,6 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
 
 <url>
   <loc>https://mrtproducoes.com/</loc>
@@ -34,6 +32,12 @@
 <url>
   <loc>https://mrtproducoes.com/sobre/</loc>
   <lastmod>2020-04-02T02:45:11+00:00</lastmod>
+  <changefreq>never</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://mrtproducoes.com/parceiros/</loc>
+  <lastmod>2020-05-04T02:45:11+00:00</lastmod>
   <changefreq>never</changefreq>
   <priority>0.80</priority>
 </url>

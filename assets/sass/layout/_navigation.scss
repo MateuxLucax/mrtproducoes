@@ -78,6 +78,10 @@
 	}
 
 	&__logo {
+		@include responsive(tab-port) {
+			display: none;
+		}
+
 		&-img {
 			width: 15vw;
 			@include responsive(tab-port) {
@@ -136,6 +140,7 @@
 		}
 
 		@include responsive(tab-port) {
+			display: none;
 			height: 0.2rem;
 			&::before {
 				height: 0.2rem;

@@ -10,7 +10,12 @@
 		"compile:sass": "node-sass assets/sass/main.scss assets/css/style.comp.css",
 		"prefix:css": "postcss --use autoprefixer -b 'last 10 versions' assets/css/style.comp.css -o assets/css/style.prefix.css",
 		"compress:css": "node-sass assets/css/style.prefix.css assets/css/style.css --output-style compressed",
-		"build:css": "npm-run-all compile:sass prefix:css compress:css"
+		"build:css": "npm-run-all compile:sass prefix:css compress:css",
+		"watch-admin:sass": "node-sass assets/admin-sass/main.scss assets/css/admin-style.css -w",
+		"compile-admin:sass": "node-sass assets/admin-sass/main.scss assets/css/admin-style.comp.css",
+		"prefix-admin:css": "postcss --use autoprefixer -b 'last 10 versions' assets/css/admin-style.comp.css -o assets/css/admin-style.prefix.css",
+		"compress-admin:css": "node-sass assets/css/admin-style.prefix.css assets/css/admin-style.css --output-style compressed",
+		"build-admin:css": "npm-run-all compile-admin:sass prefix-admin:css compress-admin:css"
 	},
 	"author": "Mateus Lucas",
 	"license": "ISC",

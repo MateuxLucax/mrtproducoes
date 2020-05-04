@@ -1,6 +1,6 @@
 var gallery = document.querySelector(".gallery");
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 	resetPage();
 	displayAlbum();
 	snackbar();
@@ -31,11 +31,11 @@ async function displayAlbum() {
 
 	xmlreq.open(
 		"GET",
-		`./../controllers/album.php?page=${getPage()}&id=${getAlbum()}`,
+		`./../controllers/album.php?page=${getPage()}&id=${getAlbum()}&orderByDesc=true`,
 		true
 	);
 
-	xmlreq.onreadystatechange = await function() {
+	xmlreq.onreadystatechange = await function () {
 		if (xmlreq.readyState == 4) {
 			if (xmlreq.status == 200) {
 				var requestResponse = JSON.parse(xmlreq.response);
@@ -59,7 +59,7 @@ async function displayAlbum() {
 	xmlreq.send(null);
 }
 
-window.onscroll = function() {
+window.onscroll = function () {
 	if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
 		mybutton.style.opacity = "1";
 		mybutton.style.visibility = "visible";
@@ -125,7 +125,7 @@ function getPage() {
 }
 
 function printAlbum(album) {
-	album.forEach(foto => {
+	album.forEach((foto) => {
 		let markup = `<img src="${foto.link}" loading="lazy" onclick="toggleFullscreen(this)" alt="Foto ${foto.codigo_foto}">`;
 		gallery.insertAdjacentHTML("beforeend", markup);
 	});

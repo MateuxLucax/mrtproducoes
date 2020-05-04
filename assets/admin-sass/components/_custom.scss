@@ -1,0 +1,43 @@
+* {
+	scroll-behavior: smooth;
+}
+
+.grandma {
+	font-family: "grandma", cursive !important;
+}
+
+.nunito {
+	font-family: "Nunito", sans-serif;
+}
+
+.mrt__sidenav {
+	margin-top: 1rem;
+	width: 50%;
+}
+
+.purple-title {
+	color: $primary-color;
+}
+
+.margin-small-top {
+	margin-top: 1rem;
+}
+
+.titulo {
+	text-transform: uppercase;
+	background: linear-gradient(
+		to right,
+		$primary-color-dark,
+		$primary-color-light
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	@extend .center;
+	@extend .grandma;
+	font-weight: bold;
+}
+
+.texto {
+	font-size: 1.4rem;
+	text-align: center;
+}

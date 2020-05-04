@@ -1,0 +1,15 @@
+/* TEAM */
+                                
+Fullstack developer: Mateus Lucas Cruz Brandt.
+Site: mateuxlucax@gmail.com, mateuxlucax.com.
+Github: github.com/MateuxLucax.
+Linkedin: linkedin.com/in/mateusbrandt/.
+Dribble: dribbble.com/MateuxLucax.
+Location: Rio do Sul, Brazil.
+                                
+/* SITE */
+
+Last update: 2020/05/s04                             
+Standards: HTML5, CSS3,JS.
+Components: autoprefixer, concat, node-sass, postcss-cli, npm-run-all.       
+Software: Visual Studio Code.
