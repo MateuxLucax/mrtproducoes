@@ -4,7 +4,11 @@
 
   session_start();
 
+  error_reporting(0);
+  ini_set('display_errors', 0);
+
   $token =  isset($_GET['token']) ? $_GET['token'] : $_POST['token'];
+  $token = empty($token) ? 'nothing' : $token;
   if (!isset($_SESSION['usuario']) || !hash_equals($_SESSION['token'], $token)) {
     http_response_code(403);
     die("You shouldn't be accessing this file. Please login or go back to website!"); 

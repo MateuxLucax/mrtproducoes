@@ -34,8 +34,10 @@
 
         $sth = $dbh->prepare($query);
 
+        $senha = hash('sha512', $senha);
+
         $sth->bindParam(":usuario", $usuario, PDO::PARAM_STR);
-        $sth->bindParam(":senha", hash('sha512', $senha), PDO::PARAM_STR, 128);
+        $sth->bindParam(":senha", $senha, PDO::PARAM_STR, 128);
         $sth->execute();  
         
         $sucesso = "Usuário cadastrado";

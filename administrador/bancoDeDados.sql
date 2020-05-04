@@ -36,8 +36,3 @@ CREATE TABLE `Administrador`(
     `usuario` VARCHAR(255) PRIMARY KEY,
     `senha` VARCHAR(128) NOT NULL
 );
-
-
-INSERT INTO `Administrador`
-VALUES ('martina',
-        'a4be93d5b2c8de29e9f96edfe9e3c28aa838e2d4b257dee9465794312dec803098d42e1c046301552a57eab5fc72351999ec26004948ecd95d402be8570920b8');
