@@ -83,18 +83,15 @@
     <script>
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('{root_path}service-worker.js')
-          .then(reg => console.info('Service worker registrado', reg))
-          .catch(err => console.error('Erro ao registrar o service worker', err));
+          .then(reg => console.info('Service worker registrado 📸!'))
+          .catch(err => console.error('Erro ao registrar o service worker 📷!'));
       }
     </script>
 
     <script>
       {{script}}
     </script>
-    
-    <!-- Google Ads -->
-    <script data-ad-client="ca-pub-7415217743082837" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  
+
   </body>
 
   </html>

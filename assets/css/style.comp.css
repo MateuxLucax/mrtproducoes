@@ -952,9 +952,12 @@ button {
   justify-content: center;
   align-items: center;
   min-width: 50%;
-  box-shadow: var(--box-shadow-medium);
   padding: 3rem;
-  text-align: center; }
+  text-align: center;
+  transition: all 0.2s;
+  box-shadow: var(--box-shadow-small); }
+  .partner:hover {
+    box-shadow: var(--box-shadow-medium); }
   .partner__img {
     border-radius: 50%;
     width: 45vw;
@@ -975,22 +978,16 @@ button {
         width: 11.25vw;
         height: 11.25vw; } }
   .partner__name {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     font-weight: 700;
     color: var(--color-primary);
-    font-size: 3.2rem; }
-    @media only screen and (min-width: 60em) {
-      .partner__name {
-        font-size: 2.4rem; } }
+    font-size: 2.4rem; }
   .partner__role {
     margin-bottom: 3rem;
     font-weight: 400;
-    font-size: 2.4rem; }
-    @media only screen and (min-width: 60em) {
-      .partner__role {
-        font-size: 1.8rem; } }
+    font-size: 1.6rem; }
   .partner a {
-    max-width: 45vw; }
+    font-size: 1.6rem; }
 
 .products {
   grid-template-rows: 40vh min-content; }
@@ -1022,8 +1019,8 @@ button {
     flex-direction: column;
     align-items: center; }
     .about__person-img {
-      height: 50vw !important;
-      width: 50vw !important;
+      height: 50vw;
+      width: 50vw;
       border-radius: 50%;
       margin-bottom: 2rem;
       object-fit: cover;
@@ -1044,8 +1041,8 @@ button {
       .about__person {
         flex-direction: row; }
         .about__person-img {
-          height: 20vw !important;
-          width: 20vw !important;
+          height: 20vw;
+          width: 20vw;
           margin: 0; }
         .about__person-description {
           text-align: left;
@@ -1056,9 +1053,9 @@ button {
           margin-bottom: 2rem; } }
     @media only screen and (min-width: 60em) {
       .about__person-img {
-        height: 10vw !important;
-        width: 10vw !important; } }
+        height: 10vw;
+        width: 10vw; } }
     @media only screen and (min-width: 75em) {
       .about__person-img {
-        height: 7.5vw !important;
-        width: 7.5vw !important; } }
+        height: 7.5vw;
+        width: 7.5vw; } }

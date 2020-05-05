@@ -1,4 +1,4 @@
-const staticCacheName = "mrt-producoes-2.0";
+const staticCacheName = "mrt-pwa-v3";
 const filesToCache = [
 	// Pages
 	"offline.html",
@@ -32,7 +32,26 @@ const filesToCache = [
 	"assets/img/pagina-inicial/fundo-mobile.jpg",
 	"assets/img/sobre/fundo.jpg",
 	"assets/img/sobre/fundo-mobile.jpg",
+	"assets/img/parceiros/fundo.jpg",
+	"assets/img/parceiros/fundo-mobile.jpg",
 ];
+
+// Clear cache on activate
+this.addEventListener("activate", function (event) {
+	var cachesToKeep = [staticCacheName];
+
+	event.waitUntil(
+		caches.keys().then(function (keyList) {
+			return Promise.all(
+				keyList.map(function (key) {
+					if (cachesToKeep.indexOf(key) === -1) {
+						return caches.delete(key);
+					}
+				})
+			);
+		})
+	);
+});
 
 // Cache on install
 this.addEventListener("install", (event) => {
@@ -40,19 +59,6 @@ this.addEventListener("install", (event) => {
 	event.waitUntil(
 		caches.open(staticCacheName).then((cache) => {
 			return cache.addAll(filesToCache);
-		})
-	);
-});
-
-// Clear cache on activate
-this.addEventListener("activate", (event) => {
-	event.waitUntil(
-		caches.keys().then((cacheNames) => {
-			return Promise.all(
-				cacheNames
-					.filter((cacheName) => cacheName !== staticCacheName)
-					.map((cacheName) => caches.delete(cacheName))
-			);
 		})
 	);
 });
