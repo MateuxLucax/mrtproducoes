@@ -47,3 +47,49 @@
 		cursor: zoom-out;
 	}
 }
+
+.gallery-square {
+	grid-column: center-start / center-end;
+	user-select: none;
+	padding: 1rem;
+
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-auto-rows: 1fr;
+	grid-gap: 1rem;
+
+	&::before {
+		content: '';
+		width: 0;
+		padding-bottom: 100%;
+		grid-row: 1 / 1;
+		grid-column: 1 / 1;
+	}
+	  
+	& > *:first-child {
+		grid-row: 1 / 1;
+		grid-column: 1 / 1;
+	}
+}
+
+.gallery-square img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: top;
+	transition: all 0.2s;
+
+	&:hover {
+		opacity: 0.7;
+		cursor: zoom-in;
+	}
+
+	&:fullscreen {
+		padding: 2rem 0;
+		opacity: 1;
+		cursor: zoom-out;
+		object-fit: contain;
+	}
+}
+
+  
