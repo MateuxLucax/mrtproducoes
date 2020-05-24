@@ -33,7 +33,7 @@
     $page = str_replace("{{content}}", $content, $page);
     $page = str_replace("{root_path}", $root_path, $page);
     $page = str_replace("{hero_mod}", $hero_mod, $page);
-    $hero_logo = '<img src="assets/img/icons/logo.png" alt="Hero logo" class="hero__img">';
+    $hero_logo = '<img src="assets/img/icons/logo.png" alt="Hero logo" class="hero__img" loading="lazy">';
     $page = str_replace("{hero_logo}", $hero_logo, $page);
     $page = str_replace("{1}", $active, $page);
     $page = str_replace("{page_layout}", $page_layout, $page);

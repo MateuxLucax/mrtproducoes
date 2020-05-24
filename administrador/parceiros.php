@@ -134,7 +134,7 @@
                                                                 <?php echo $row ['nome']; ?>
 															</td>
 															<td>
-																<img src="<?php echo $row['foto']; ?>" style="height:100px" alt="">
+																<img src="<?php echo $row['foto']; ?>" loading="lazy" style="height:100px" alt="">
 															</td>
 															<td>
                                                                 <?php echo $row ['profissao']; ?>

@@ -1,6 +1,6 @@
 var videoContainer = document.querySelector(".clips__container");
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 	resetPage();
 	displayClips();
 });
@@ -30,7 +30,7 @@ async function displayClips() {
 
 	xmlreq.open("GET", `./../controllers/clipes.php?page=${getPage()}`, true);
 
-	xmlreq.onreadystatechange = await function() {
+	xmlreq.onreadystatechange = await function () {
 		if (xmlreq.readyState == 4) {
 			if (xmlreq.status == 200) {
 				var requestResponse = JSON.parse(xmlreq.response);
@@ -54,7 +54,7 @@ async function displayClips() {
 	xmlreq.send(null);
 }
 
-window.onscroll = function() {
+window.onscroll = function () {
 	if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
 		mybutton.style.opacity = "1";
 		mybutton.style.visibility = "visible";
@@ -120,11 +120,11 @@ function getPage() {
 }
 
 function printClips(videos) {
-	videos.forEach(video => {
+	videos.forEach((video) => {
 		let markup = `<div class="clips__video-container">
 							<h2>${video.titulo}</h2>
 							<div class="video-container video">
-								<iframe preload="none" src="${video.link}" frameborder="0" allowfullscreen></iframe>
+								<iframe preload="none" src="${video.link}" frameborder="0" allowfullscreen  loading=lazy></iframe>
 							</div>
 						</div>`;
 		videoContainer.insertAdjacentHTML("beforeend", markup);

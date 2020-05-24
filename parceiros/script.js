@@ -122,7 +122,7 @@ function getPage() {
 function printpartners(partners) {
 	partners.forEach((partner) => {
 		let markup = `<div class="partner">
-							<img src="${partner.foto}" alt="${partner.nome}" class="partner__img">
+							<img src="${partner.foto}" alt="${partner.nome}" class="partner__img" loading="lazy">
 							<h3 class="partner__name">${partner.nome}</h3>
 							<h4 class="partner__role">${partner.profissao}</h4>
 							<a href="${partner.link}" class="btn-primary">${partner.titulo_link}</a>

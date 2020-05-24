@@ -147,7 +147,7 @@
 																<?php echo $row['codigo_foto']; ?>
 															</td>
 															<td>
-																<img src="<?php echo $row['link']; ?>" style="height:100px" alt="">
+																<img src="<?php echo $row['link']; ?>" loading="lazy" style="height:100px" alt="">
 															</td>
 															<!-- Alterar -->
 															<td>

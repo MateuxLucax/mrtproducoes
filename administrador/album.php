@@ -120,7 +120,7 @@
 																	<?php echo $row['titulo']; ?>
 															</td>
 															<td>
-                                                                <img src="<?php echo $row['capa']; ?>" style="height:100px" alt="">
+                                                                <img src="<?php echo $row['capa']; ?>" style="height:100px" loading="lazy" alt="">
 															</td>
 															<td>
 																<a class="waves-effect waves-light modal-trigger mrt-text text-azul" href="foto.php?a=<?php echo $row['codigo'] ?>"><i class="material-icons">add_circle_outline</i></a>
