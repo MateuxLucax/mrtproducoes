@@ -1,3 +1,7 @@
+<p align="center">
+  <img height="96" src="https://raw.githubusercontent.com/MateuxLucax/mrtproducoes/master/assets/img/icons/favicon.png">
+</p>
+
 # MRT Produções
 
 Website developed for MRT Produções. A small and passionate couple of photographers and videomakers.
