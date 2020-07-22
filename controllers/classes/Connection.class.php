@@ -7,11 +7,11 @@ class Connection {
 	protected static $connection;
 
 	private function __construct ()	{
-		$db_host = "189.224.138.217";
-		$db_nome = "u729591583_mrt";
-		$db_usuario = "u729591583_prod";
-		$db_senha = "martinaeramon";
-		$db_driver = "mysql";
+		$db_host = "";
+		$db_nome = "";
+		$db_usuario = "";
+		$db_senha = "";
+		$db_driver = "";
 
         date_default_timezone_set('America/Sao_Paulo');
 
