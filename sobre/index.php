@@ -38,6 +38,17 @@
     $page = str_replace("{theme}", $theme, $page);
     $page = str_replace("{page_layout}", $page_layout, $page);
     
+    function getAge($bithdayDate) {
+      $date = new DateTime($bithdayDate);
+      $now = new DateTime();
+      $interval = $now->diff($date);
+      return $interval->y;
+    }
+    
+    
+    $page = str_replace("{idadeRamon}", getAge('1998-07-28'), $page);
+    $page = str_replace("{idadeMartina}", getAge('2002-03-14'), $page);
+    
     print($page);
 
 ?>

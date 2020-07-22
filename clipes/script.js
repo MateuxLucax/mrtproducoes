@@ -124,7 +124,7 @@ function printClips(videos) {
 		let markup = `<div class="clips__video-container">
 							<h2>${video.titulo}</h2>
 							<div class="video-container video">
-								<iframe preload="none" src="${video.link}" frameborder="0" allowfullscreen  loading=lazy></iframe>
+								<iframe preload="none" src="${video.link}" frameborder="0" allowfullscreen  loading="lazy"></iframe>
 							</div>
 						</div>`;
 		videoContainer.insertAdjacentHTML("beforeend", markup);
