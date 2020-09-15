@@ -21,7 +21,7 @@ CREATE TABLE `Clipes` (
 	`codigo` INT PRIMARY KEY AUTO_INCREMENT,
     `titulo` VARCHAR(255) NOT NULL,
     `link` TEXT NOT NULL
-);w
+);
 
 CREATE TABLE `Parceiros` (
     `codigo` INT PRIMARY KEY AUTO_INCREMENT,

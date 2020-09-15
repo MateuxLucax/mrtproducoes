@@ -1,11 +1,11 @@
 .gallery {
-	grid-column: full-start / full-end;
+	grid-column: center-start / center-end;
 	user-select: none;
 
 	line-height: 0;
 	column-count: 2;
 	column-gap: 1rem;
-	padding: 1rem;
+	// padding: 1rem;
 
 	@include responsive(tab-port) {
 		column-count: 3;
@@ -17,10 +17,6 @@
 
 	@include responsive(desktop) {
 		column-count: 5;
-	}
-
-	@include responsive(big-desktop) {
-		column-count: 6;
 	}
 }
 
